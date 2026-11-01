@@ -1,9 +1,5 @@
-<!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>宝石クエスト</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap">
 <style>
@@ -99,7 +95,63 @@ h1,h2,h3{font-family:var(--head);text-wrap:balance;margin:0;line-height:1.35}
 .q{font-size:21px;font-weight:700;line-height:1.65;margin:0}
 .fig{background:var(--sunk);border-radius:14px;display:flex;flex-direction:column;align-items:center;padding:12px;gap:4px}
 .fig svg{width:min(240px,70vw);height:auto;display:block}
+.fig svg.cutsvg{width:min(360px,100%)}
+.duo{display:grid;grid-template-columns:1fr;gap:10px}
+@media (min-width:600px){.duo{grid-template-columns:1fr 1fr;align-items:stretch}.duo .ph{justify-content:center}}
+.bq .fig svg.cutsvg{height:110px}
+.bq .fig{gap:8px;flex-direction:row}
 .fig small{font-size:12px;color:var(--muted)}
+/* photos */
+.ph{margin:0;background:var(--sunk);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;align-items:center}
+.ph img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;background:#fff}
+.ph .zimg{line-height:0}
+.ph figcaption{font-size:11.5px;color:var(--muted);padding:5px 10px;line-height:1.5;text-align:center}
+.ph.mini{flex-direction:row;align-items:center;gap:12px;padding:8px;background:var(--sunk)}
+.ph.mini img{width:96px;height:96px;object-fit:cover;border-radius:10px;flex:none}
+.ph.mini figcaption{text-align:left;padding:0;font-size:12px}
+.ph.mini figcaption b{display:block;font-size:14px;color:var(--fg)}
+.st-ph{width:52px;height:52px;border-radius:12px;object-fit:cover;background:#fff;display:block}
+.stage.has-ph{grid-template-columns:64px 52px minmax(0,1fr) auto}
+.credits{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.credit{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.credit img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#fff;display:block}
+.credit div{padding:8px 12px;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.credit b{font-size:15px;display:block}
+.credit a{color:var(--tip)}
+.zimg{display:block;border:0;padding:0;background:#fff;cursor:zoom-in;width:100%;position:relative;border-radius:10px;overflow:hidden}
+.zimg.plain{border-radius:0;background:#fff}
+.zimg span{position:absolute;left:6px;bottom:6px;font-size:11px;background:rgba(0,0,0,.6);color:#fff;border-radius:6px;padding:1px 6px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{flex:1 1 140px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);cursor:pointer;font-weight:700;font-size:15px}
+.seg button[aria-selected="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:14px}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.zlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.zk{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px;align-items:start}
+.zk .zimg img{width:112px;height:112px;object-fit:cover;display:block}
+.zt b{font-size:17px;display:block;line-height:1.4}
+.zt p{margin:4px 0 0;font-size:14.5px;line-height:1.65}
+.zw{font-size:13px;color:var(--muted)}
+.zh2{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-top:2px}
+.hbar{display:inline-block;width:80px;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.hbar i{display:block;height:100%;background:var(--gold)}
+.zgo{padding:4px 0;font-size:13.5px;color:var(--accent);text-align:left}
+.zh{font-size:17px;margin:14px 0 8px;border-left:5px solid var(--accent);padding-left:10px}
+.zcuts{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.zcut{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.zcut .zimg img{width:100%;height:150px;object-fit:contain;display:block}
+.lightbox{position:fixed;inset:0;background:rgba(10,8,12,.88);z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;cursor:zoom-out}
+.lightbox figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;max-width:100%}
+.lightbox img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:8px;background:#fff}
+.lightbox figcaption{color:#ddd;font-size:12px;text-align:center}
+.tl{font:inherit;color:inherit;background:none;border:0;padding:0;border-bottom:2px dotted var(--tip);cursor:help}
+.gl-pop{background:var(--tip-soft);border-radius:12px;padding:10px 14px;font-size:15px;animation:rise .2s ease}
+.gl-pop b{display:block;color:var(--tip);font-size:13px}
+.guide{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 18px}
+.guide summary{cursor:pointer;font-weight:700;font-family:var(--head)}
+.guide ol{margin:8px 0 4px;padding-left:1.4em;font-size:15.5px}
+.guide li{margin:4px 0}
 .choices{display:flex;flex-direction:column;gap:10px}
 .choice{display:flex;gap:14px;align-items:center;text-align:left;padding:14px 16px;min-height:58px;border-radius:14px;border:2px solid var(--line);background:var(--bg);cursor:pointer;font-size:18px;line-height:1.5}
 .choice .k{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1.5px solid var(--line);font-weight:700;font-size:15px;color:var(--muted)}
@@ -149,6 +201,7 @@ h1,h2,h3{font-family:var(--head);text-wrap:balance;margin:0;line-height:1.35}
 .bq ol{margin:4px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 16px;font-size:16px}
 .bq .fig{display:inline-flex;margin:4px 0;padding:4px}
 .bq .fig svg{width:auto;height:105px;max-width:100%}
+.bq .fig img{height:110px;width:auto;max-width:100%;display:block;border-radius:6px}
 .ans{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:15px;break-inside:avoid}
 .ans h4{margin:0 0 6px;font-size:15px}
 .ans ol{margin:0;padding-left:1.6em}
@@ -163,7 +216,8 @@ h1,h2,h3{font-family:var(--head);text-wrap:balance;margin:0;line-height:1.35}
 .term .src{margin-top:2px}
 .confirm{background:var(--ng-soft);border-radius:12px;padding:12px 16px;display:flex;flex-direction:column;gap:10px}
 .reset{align-self:flex-start;font-size:14px}
-@media (max-width:480px){.bq ol{grid-template-columns:1fr}.q{font-size:19px}.choice{font-size:17px}}
+@media (max-width:560px){.stage.has-ph{grid-template-columns:52px 44px minmax(0,1fr)}.stage.has-ph .st-act{grid-column:1/-1}.st-ph{width:44px;height:44px}}
+@media (max-width:480px){.zk{grid-template-columns:92px minmax(0,1fr)}.zk .zimg img{width:92px;height:92px}.zlist,.zcuts{grid-template-columns:1fr}.bq ol{grid-template-columns:1fr}.q{font-size:19px}.choice{font-size:17px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{
   :root{--bg:#fff;--surface:#fff;--sunk:#f4f4f4;--fg:#000;--muted:#444;--line:#aaa;--accent:#7a1530}
@@ -181,8 +235,10 @@ h1,h2,h3{font-family:var(--head);text-wrap:balance;margin:0;line-height:1.35}
   </header>
   <nav class="nav noprint" aria-label="表示切替">
     <button id="nav-home" aria-pressed="true">ステージ</button>
-    <button id="nav-book" aria-pressed="false">問題集</button>
+    <button id="nav-zukan" aria-pressed="false">図鑑</button>
     <button id="nav-glos" aria-pressed="false">用語集</button>
+    <button id="nav-book" aria-pressed="false">問題集</button>
+    <button id="nav-cred" aria-pressed="false">写真の出典</button>
   </nav>
   <main id="view"></main>
   <p class="note noprint" id="foot"></p>
@@ -194,7 +250,7 @@ h1,h2,h3{font-family:var(--head);text-wrap:balance;margin:0;line-height:1.35}
    問題: {q:問題文, c:[選択肢], a:正解の番号(0始まり), e:解説, p:テキストのページ, img:図のキー(任意), tip:買取現場メモ(任意), b:"後編"(任意。章の book より優先)} */
 window.GEM_DATA = {
 updated: "2026-10-31",
-source: "宝石テキスト p.6〜71 ＋ 後編 p.4〜59",
+source: "宝石テキスト p.6〜71 ＋ 後編 p.4〜59 ＋ 実物写真",
 chapters: [
 
 /* ───────── 第1章 ───────── */
@@ -866,7 +922,111 @@ chapters: [
 ]}
 
 ]}
+
+,{ id:"cp", no:"写真", short:"写真で見分ける", label:"写真編", title:"写真で見分ける（実物写真クイズ）", pages:"全章の総復習", stages:[
+
+{ id:"cps1", title:"定番の宝石を写真で見分ける", star:1, pages:"p.22〜65・後編 p.4〜34", ph:"ruby", qs:[
+ {q:"写真の宝石は？", img:"ruby", c:["ルビー","ガーネット","レッドスピネル","ルベライト"], a:0, e:"鮮やかな赤のルビー。ピンクがかった赤の発色はクロムによるものです。赤い石は種類が多いので、迷ったら鑑別書で確認します。", p:"38〜39", tip:"赤い石は「ルビーだと思ったらスピネルやガーネット」がよくあります。断定せずに鑑別を。"},
+ {q:"写真の宝石は？", img:"sapphire", c:["サファイア","タンザナイト","アイオライト","ラピスラズリ"], a:0, e:"深い青のサファイア（写真は大粒の石をダイヤで取り巻いたもの）。サファイアはルビーと同じコランダムです。", p:"30〜31"},
+ {q:"写真の宝石は？", img:"emerald", c:["エメラルド","ペリドット","グリーントルマリン","ツァボライト"], a:0, e:"深い緑のエメラルド。四角い「エメラルドカット」は、割れやすいこの石のために生まれたカットです。", p:"48〜51"},
+ {q:"写真の宝石は？", img:"aquamarine", c:["アクアマリン","ブルートパーズ","ブルージルコン","ラリマー"], a:0, e:"やさしい水色のアクアマリン。エメラルドと同じベリルの仲間です。ブルートパーズはもっと色が濃く鮮やかなことが多いです。", p:"48〜51"},
+ {q:"写真の宝石は？", img:"amethyst", c:["アメジスト","タンザナイト","クンツァイト","パープルサファイア"], a:0, e:"紫色の水晶、アメジスト（紫水晶）。2月の誕生石です。", p:"60〜63"},
+ {q:"写真の宝石は？", img:"citrine", c:["シトリン","インペリアルトパーズ","イエローサファイア","スフェーン"], a:0, e:"黄色の水晶、シトリン。市場のシトリンの多くはアメジストを加熱して黄色にしたものです。", p:"64〜65"},
+ {q:"写真の宝石は？", img:"peridot", c:["ペリドット","エメラルド","デマントイドガーネット","グリーントルマリン"], a:0, e:"黄緑のペリドット。オリーブのような黄みのある緑が特徴で、「夕べのエメラルド」とも呼ばれます。", p:"4〜5", b:"後編"},
+ {q:"写真の宝石は？", img:"garnet", c:["ガーネット","ルビー","レッドスピネル","カーネリアン"], a:0, e:"暗めの赤のガーネット。ルビーより黒みや茶色みを帯びた赤が多いのが見分けの目安です。", p:"56〜59"},
+ {q:"写真の宝石は？", img:"turquoise", c:["ターコイズ","ラリマー","カルセドニー","アマゾナイト"], a:0, e:"空色に茶色の網目模様（メイトリックス）が入ったターコイズ。母岩の模様が入るのが特徴です。", p:"33〜34", b:"後編"},
+ {q:"写真の宝石は？", img:"diamond", c:["ダイヤモンド","ロッククリスタル","ジルコン","ホワイトトパーズ"], a:0, e:"ラウンドブリリアントカットのダイヤモンド。虹色のきらめき（ディスパージョン）と強い輝きが特徴です。", p:"22〜23", tip:"見た目だけでは無色の石（ジルコン・合成石など）と区別しきれません。必ずテスターや鑑別書で確認を。"}
+]},
+
+{ id:"cps2", title:"不透明な石・有機宝石", star:1, pages:"p.66〜71・後編 p.6〜51", ph:"lapis", qs:[
+ {q:"写真の石は？", img:"lapis", c:["ラピスラズリ","ソーダライト","アズライト","ターコイズ"], a:0, e:"濃い青に白や金色の粒が混じるラピスラズリ（瑠璃）。金色の粒はパイライト（黄鉄鉱）です。", p:"35〜36", b:"後編"},
+ {q:"写真の石は？", img:"malachite", c:["マラカイト","ジェダイト","ネフライト","クリソプレーズ"], a:0, e:"濃淡の緑がしま模様になるマラカイト（孔雀石）。この同心円状の模様が一番の目印です。", p:"37〜40", b:"後編"},
+ {q:"写真の石は？", img:"larimar", c:["ラリマー","ターコイズ","ブルーカルセドニー","アクアマリン"], a:0, e:"水色に白い波のような模様が入るラリマー。カリブ海のドミニカ共和国だけで採れます。", p:"37〜40", b:"後編"},
+ {q:"写真の宝石は？", img:"coral", c:["珊瑚（赤珊瑚）","カーネリアン","ロードクロサイト","ルビー"], a:0, e:"枝の形が残る赤珊瑚。生き物が作る有機宝石です。濃い赤は「血赤（ちあか）」と呼ばれ高く評価されます。", p:"41〜42", b:"後編"},
+ {q:"写真のような、白く上品な照りの小粒の真珠は？", img:"pearl", c:["アコヤ真珠","タヒチ真珠（黒蝶真珠）","コンクパール","淡水パール"], a:0, e:"日本を代表するアコヤ真珠。白〜ピンクがかった色と強い照り（テリ）が特徴です。", p:"43〜45", b:"後編"},
+ {q:"写真の宝石は？", img:"amber", c:["琥珀（アンバー）","シトリン","ファイアオパール","べっ甲"], a:0, e:"虫が閉じ込められた琥珀。木の樹液の化石で、虫入りは人気があります。", p:"50〜51", b:"後編", tip:"虫入りは樹脂で作った偽物もあります。軽すぎる・虫がきれいすぎる場合は注意。"},
+ {q:"写真の黒い石は？", img:"hematite", c:["ヘマタイト","ブラックオニキス","ジェット","オブシディアン"], a:0, e:"金属のような銀黒色の光沢をもつヘマタイト。持つとずっしり重いのも特徴です。", p:"22〜25", b:"後編"},
+ {q:"写真の黒いカボションの石は？", img:"onyx", c:["ブラックオニキス","ヘマタイト","オブシディアン","ブラックオパール"], a:0, e:"均一な黒のブラックオニキス。多くはカルセドニー（玉髄）を黒く染めたものです。", p:"66〜71"},
+ {q:"写真の、貝の内側の虹色に光る部分は？", img:"mother-of-pearl", c:["マザーオブパール（真珠層）","オパール","ラブラドライト","アンモライト"], a:0, e:"貝殻の内側の真珠層、マザーオブパール。真珠と同じ物質でできています。", p:"46〜49", b:"後編"},
+ {q:"写真は緑色の宝石の原石です。日本の糸魚川でも採れる、この宝石は？", img:"jadeite", c:["翡翠（ジェダイト）","ペリドット","マラカイト","エメラルド"], a:0, e:"翡翠（ジェダイト）の原石。磨くと透明感のある緑が出ます。原石の段階では価値の見極めがとても難しい石です。", p:"6〜7", b:"後編"}
+]},
+
+{ id:"cps3", title:"光の効果を写真で見る", star:2, pages:"p.39・44〜47・54・後編 p.16〜30", ph:"black-opal", qs:[
+ {q:"写真のように星形の光が浮かぶ効果を何という？", img:"star-sapphire", c:["アステリズム（スター効果）","シャトヤンシー","アデュラレッセンス","遊色効果"], a:0, e:"針状の内包物が光を反射して星形の光が出る「アステリズム」。写真はスターサファイアです。カボションカットにすると現れます。", p:"38〜39"},
+ {q:"写真のピンクのスター石は？", img:"star-ruby", c:["スタールビー","スターサファイア","ローズクォーツ","コンクパール"], a:0, e:"赤〜ピンクのコランダムに星が出たスタールビー。青なら「スターサファイア」です。", p:"38〜39"},
+ {q:"写真のように1本の光の筋が出るクリソベリルを何という？", img:"catseye", c:["クリソベリルキャッツアイ","タイガーアイ","アレキサンドライト","ムーンストーン"], a:0, e:"猫の目のような光の筋（シャトヤンシー）が出るクリソベリル。単に「キャッツアイ」と言えばこの石を指します。", p:"44〜47"},
+ {q:"写真は同じ種類の石を、違う光の下で撮ったものです。この石は？", img:"alexandrite", c:["アレキサンドライト","アイオライト","タンザナイト","トルマリン"], a:0, e:"太陽光で緑系、白熱灯で赤紫系に色が変わるアレキサンドライト。この「カラーチェンジ」が最大の特徴です。", p:"44〜47"},
+ {q:"写真のように青白い光がふわっと浮かぶ石は？", img:"moonstone", c:["ムーンストーン","オパール","ラブラドライト","カルセドニー"], a:0, e:"月の光のような青白い光（アデュラレッセンス）が浮かぶムーンストーン。長石の仲間です。", p:"16〜19", b:"後編"},
+ {q:"写真のように、角度によって青や金色にギラッと光る石は？", img:"labradorite", c:["ラブラドライト","ムーンストーン","オパール","マラカイト"], a:0, e:"暗い地に青・緑・金の光が出るラブラドライト。この光り方を「ラブラドレッセンス」と呼びます。", p:"16〜19", b:"後編"},
+ {q:"写真のように、中に小さな金属のようなきらめきが見える石は？", img:"sunstone", c:["サンストーン","アベンチュリン","ムーンストーン","カーネリアン"], a:0, e:"内包物がキラキラ光るサンストーン。このきらめきを「アベンチュレッセンス」と呼びます。", p:"16〜19", b:"後編"},
+ {q:"写真のように、色が虹のように変化して見える効果を何という？", img:"opal", c:["遊色効果","多色性","カラーチェンジ","アステリズム"], a:0, e:"見る角度で色が次々に変わる「遊色効果」。プレシャスオパールの特徴です。", p:"28〜29", b:"後編"},
+ {q:"写真のように、暗い地色に遊色が映えるオパールは？", img:"black-opal", c:["ブラックオパール","ボルダーオパール","ファイアオパール","ホワイトオパール"], a:0, e:"地色が暗いブラックオパール。地色が暗いほど遊色が映え、価値が高くなります。オーストラリアのライトニングリッジが有名です。", p:"30", b:"後編"},
+ {q:"写真のように、茶色い母岩と一緒に磨かれたオパールは？", img:"boulder-opal", c:["ボルダーオパール","ブラックオパール","ダブレットオパール","ファイアオパール"], a:0, e:"鉄分の多い母岩ごと磨いたボルダーオパール。張り合わせ（ダブレット）と違い、母岩とオパールが自然にくっついています。", p:"31〜32", b:"後編", tip:"横から見て、境目が一直線で黒い接着層があればダブレットを疑いましょう。"}
+]},
+
+{ id:"cps4", title:"色石の仲間を写真で見分ける", star:2, pages:"p.40〜71・後編 p.10〜29", ph:"paraiba", qs:[
+ {q:"写真の、ネオンのように鮮やかな青緑の石は？", img:"paraiba", c:["パライバトルマリン","アクアマリン","ブルートパーズ","アパタイト"], a:0, e:"銅を含むことで蛍光色のような青緑になるパライバトルマリン。1989年にブラジルで発見されました。", p:"52〜55"},
+ {q:"写真の、すみれ色がかった青の石は？", img:"tanzanite", c:["タンザナイト","サファイア","アメジスト","アイオライト"], a:0, e:"青と紫が混じるタンザナイト。タンザニアのメレラニだけで採れます。見る方向で青・紫が入れかわります。", p:"12〜15", b:"後編"},
+ {q:"写真の、薄いピンク〜ライラック色の大粒の石は？", img:"kunzite", c:["クンツァイト","モルガナイト","ローズクォーツ","ピンクトパーズ"], a:0, e:"淡いピンク〜紫のクンツァイト。スポジュミンという鉱物の一種です。日光で色があせやすいので注意します。", p:"10〜11", b:"後編"},
+ {q:"写真は、同じ石を2つの向きから撮ったものです。見る向きで色が変わるこの石は？", img:"iolite", c:["アイオライト","アレキサンドライト","タンザナイト","サファイア"], a:0, e:"見る方向で青紫と灰色っぽい色に見えるアイオライト（多色性）。昔ヴァイキングが航海に使ったと言われます。", p:"56〜59"},
+ {q:"写真の、ピンクのトルマリンは？", img:"pink-tourmaline", c:["ルベライト","インディゴライト","パライバトルマリン","ドラバイト"], a:0, e:"赤〜ピンクのトルマリン、ルベライト。青いものはインディゴライトと呼びます。", p:"52〜55"},
+ {q:"写真の石の名前は？", img:"bicolor", c:["バイカラートルマリン","アメトリン","ウォーターメロントルマリン","アレキサンドライト"], a:0, e:"1つの石に2色が入ったバイカラートルマリン。輪切りで中心がピンク・外側が緑のものはウォーターメロントルマリンです。", p:"52〜55"},
+ {q:"写真の、オレンジ色のカット石は？", img:"spessartine", c:["スペサタイトガーネット","インペリアルトパーズ","ファイアオパール","シトリン"], a:0, e:"鮮やかなオレンジのスペサタイトガーネット。特に明るいものは「マンダリンガーネット」と呼ばれます。", p:"56〜59"},
+ {q:"写真の、黄緑色で強いきらめきのある石は？", img:"demantoid", c:["デマントイドガーネット","ペリドット","エメラルド","グリーントルマリン"], a:0, e:"ダイヤモンド以上の強い虹色のきらめきをもつデマントイドガーネット。写真のような馬の尾のような内包物（ホーステール）が有名です。", p:"56〜59"},
+ {q:"写真の、金色の針が入った水晶は？", img:"rutilated", c:["ルチルクオーツ","スモーキークオーツ","アメトリン","タイガーアイ"], a:0, e:"金色の針状のルチルが入った水晶、ルチルクオーツ。金運のお守りとしても人気があります。", p:"60〜63"},
+ {q:"写真の、紫と黄色が1つに混ざった水晶は？", img:"ametrine", c:["アメトリン","バイカラートルマリン","アメジスト","シトリン"], a:0, e:"アメジスト（紫）とシトリン（黄）が1つの結晶に混ざったアメトリン。主にボリビアで採れます。", p:"60〜63"},
+ {q:"写真の、乳白色がかった水色の石は？", img:"chalcedony", c:["ブルーカルセドニー","ラリマー","ムーンストーン","ターコイズ"], a:0, e:"半透明でやわらかい水色のブルーカルセドニー。玉髄（ぎょくずい）とも呼ばれる、細かい石英の集まりです。", p:"66〜71"},
+ {q:"写真の、木の年輪のようなしま模様の石は？", img:"agate", c:["アゲート（瑪瑙）","マラカイト","ジャスパー","オニキス"], a:0, e:"しま模様のあるカルセドニーをアゲート（瑪瑙）と呼びます。模様のないものがカルセドニーです。", p:"66〜71"}
+]},
+
+{ id:"cps5", title:"まぎらわしい石を写真で見分ける", star:3, pages:"p.30〜71・後編 p.4〜59", ph:"tahitian-pearl", qs:[
+ {q:"写真の黒〜グレーで緑の照りのある真珠は？", img:"tahitian-pearl", c:["タヒチ真珠（黒蝶真珠）","アコヤ真珠","コンクパール","淡水パール"], a:0, e:"クロチョウガイから採れるタヒチ真珠。緑がかった照り（ピーコックカラー）が人気です。", p:"43〜45", b:"後編"},
+ {q:"写真のピンクの宝石には、炎のような模様が見えます。この宝石は？", img:"conch-pearl", c:["コンクパール","ピンクコーラル","ロードクロサイト","ローズクォーツ"], a:0, e:"巻き貝から採れるコンクパール。炎のような模様（フレーム）が本物の目印です。", p:"46〜49", b:"後編"},
+ {q:"写真の、黒く鋭い割れ口でガラスのように光る石は？", img:"obsidian", c:["オブシディアン（黒曜石）","ヘマタイト","ジェット","ブラックオニキス"], a:0, e:"火山のマグマが急に冷えてできた天然ガラス、オブシディアン。割れ口が貝殻のように鋭く光ります。", p:"22〜25", b:"後編"},
+ {q:"写真の、軽くて黒い石は、樹木が化石になったものです。この石は？", img:"jet", c:["ジェット","ブラックオニキス","ヘマタイト","オブシディアン"], a:0, e:"大昔の樹木が化石になったジェット（黒玉）。持つととても軽く、ヘマタイト（重い）との見分けになります。", p:6, tip:"黒い石は「重さ」が手がかり。ヘマタイトはずっしり、ジェットは軽い。"},
+ {q:"写真の、透明感のある濃いオレンジ〜赤の原石は？", img:"fire-opal", c:["ファイアオパール","カーネリアン","スペサタイトガーネット","琥珀"], a:0, e:"メキシコなどで採れるファイアオパール。遊色がなくても、炎のような地色そのものが魅力です。", p:"28〜29", b:"後編"},
+ {q:"写真の、赤い結晶の石は？ ルビーとよく間違えられます。", img:"spinel", c:["レッドスピネル","ガーネット","ルベライト","カーネリアン"], a:0, e:"ルビーと間違えられやすいレッドスピネル。結晶は写真のような八面体になります。歴史的な「ルビー」の中にはスピネルだったものもあります。", p:"40〜43"},
+ {q:"写真の、濃い緑の結晶はツァボライトです。何の仲間？", img:"tsavorite", c:["ガーネット","ベリル","トルマリン","コランダム"], a:0, e:"ツァボライトは緑色のガーネット（グロッシュラー）。エメラルドより明るく、きらめきの強い緑が特徴です。", p:"56〜59"},
+ {q:"写真の、薄いピンクの原石はベリルの仲間です。この石は？", img:"morganite", c:["モルガナイト","クンツァイト","ローズクォーツ","ピンクトパーズ"], a:0, e:"ピンクのベリル、モルガナイト。エメラルド・アクアマリンと同じベリルの仲間です。", p:"48〜51"},
+ {q:"写真の、ピンクで半透明の塊の石は？", img:"rose-quartz", c:["ローズクォーツ","モルガナイト","クンツァイト","ロードクロサイト"], a:0, e:"ピンクの水晶、ローズクォーツ。少し白く濁ったようなやわらかい色が特徴です。", p:"60〜63"},
+ {q:"写真の、黄色〜緑の小粒の石は、ダイヤより強いきらめきが特徴です。この石は？", img:"sphene", c:["スフェーン","ペリドット","シトリン","ジルコン"], a:0, e:"虹色のきらめき（ファイア）がとても強いスフェーン。柔らかいので傷に注意が必要です。", p:"26〜27", b:"後編"}
+]}
+,{ id:"cps6", title:"原石・地金・色ちがいを写真で見分ける", star:2, pages:"p.30〜71・後編 p.20〜59", ph:"emerald-crystal", qs:[
+ {q:"写真の、白い石についた緑の六角柱の原石は？", img:"emerald-crystal", c:["エメラルド","ペリドット","マラカイト","ジェダイト"], a:0, e:"エメラルドの原石。ベリル（緑柱石）は六角柱の結晶になります。", p:"48〜51"},
+ {q:"写真のように、内側に紫の結晶がびっしり並んだ石を何という？", img:"amethyst-geode", c:["アメジストの晶洞（ジオード）","ラピスラズリの原石","タンザナイトの原石","クンツァイトの結晶"], a:0, e:"岩の空洞の内側にアメジストの結晶が育ったもの。晶洞（ジオード）と呼びます。", p:"60〜63"},
+ {q:"写真の、無色透明の六角柱の結晶は？", img:"rock-crystal", c:["水晶（ロッククリスタル）","ダイヤモンドの原石","ジルコン","ムーンストーン"], a:0, e:"無色の石英、水晶。六角柱の結晶の形が目印です。", p:"60〜63"},
+ {q:"写真の、黄色いカット石の指輪。コランダムの仲間のこの石は？", img:"yellow-sapphire", c:["イエローサファイア","シトリン","インペリアルトパーズ","イエローダイヤモンド"], a:0, e:"青と赤以外の色のコランダムはファンシーカラーサファイア。黄色はイエローサファイアです。", p:"32〜34"},
+ {q:"写真の、オレンジ色の大きなカット石は？ シェリー酒のような色が高く評価されます。", img:"imperial-topaz", c:["インペリアルトパーズ","シトリン","スペサタイトガーネット","ファイアオパール"], a:0, e:"インペリアルトパーズ。シェリー酒のようなオレンジ〜ピンクがかった色が最高とされます。", p:"40〜43"},
+ {q:"写真の、濃く鮮やかな青のカット石は、放射線で青くしたものがほとんどです。この石は？", img:"blue-topaz", c:["ブルートパーズ","アクアマリン","サファイア","パライバトルマリン"], a:0, e:"ブルートパーズは、無色のトパーズに放射線を当てて青くしたものが市場の約99％です。", p:"40〜43"},
+ {q:"写真の、緑のステップカットの石。トルマリンの仲間のこの石は？", img:"green-tourmaline", c:["グリーントルマリン","エメラルド","ペリドット","ツァボライト"], a:0, e:"緑色のトルマリン。エメラルドより黄みや暗さがあることが多いです。", p:"52〜55"},
+ {q:"写真のように、輪切りにすると中心がピンク・外側が緑になるトルマリンは？", img:"watermelon", c:["ウォーターメロントルマリン","バイカラートルマリン","パライバトルマリン","ルベライト"], a:0, e:"スイカのような色の分かれ方からウォーターメロントルマリンと呼ばれます。", p:"52〜55"},
+ {q:"写真の、オレンジ色の半透明の石は？ カルセドニーの仲間です。", img:"carnelian", c:["カーネリアン（紅玉髄）","琥珀","ファイアオパール","サンストーン"], a:0, e:"オレンジ〜赤のカルセドニー、カーネリアン。和名は紅玉髄です。", p:"66〜71"},
+ {q:"写真の、緑の板状に磨いた石は「翡翠」と呼ばれるもう一つの石です。どれ？", img:"nephrite", c:["ネフライト（軟玉）","ジェダイト（硬玉）","マラカイト","アマゾナイト"], a:0, e:"翡翠にはジェダイト（硬玉）とネフライト（軟玉）の2種類があります。宝石としての価値はジェダイトの方が高いです。", p:"6〜7", b:"後編"},
+ {q:"写真の、赤褐色の結晶の石は？ 無色のものはダイヤの代わりにされてきました。", img:"zircon", c:["ジルコン","ガーネット","スピネル","トパーズ"], a:0, e:"ジルコン。強いきらめきがあり、無色のものはダイヤモンドの代用にされてきました。ファセットが二重に見える複屈折も特徴です。", p:"20〜21", b:"後編"},
+ {q:"写真のような金の延べ棒。ジュエリーによく使われる「K18」の金の割合は？", img:"gold", c:["約50％","約75％","約92.5％","100％"], a:1, e:"K18は24分の18が金で、約75％。残りの25％は割金（わりがね）と呼ばれるほかの金属です。", p:"56〜57", b:"後編"}
+]}
+,{ id:"cps7", title:"にせもの・代用品・似た石に注意", star:3, pages:"p.8・32〜71・後編 p.6〜51", ph:"moissanite", qs:[
+ {q:"写真の無色の石はダイヤによく似た人造宝石です。ダイヤの代用品の代表で、ダイヤより重いこの石は？", img:"cubic-zirconia", c:["キュービックジルコニア","ロッククリスタル","ホワイトサファイア","ムーンストーン"], a:0, e:"キュービックジルコニア（CZ）は自然界にない組成で作られた人造宝石。ダイヤの代用品の代表例です。", p:8, tip:"見た目だけで判断せず、ダイヤテスターで確認しましょう。"},
+ {q:"写真はダイヤによく似た「合成モアッサナイト」です。買取で特に注意が必要な理由は？", img:"moissanite", c:["熱伝導式のダイヤテスターで「ダイヤ」と出ることがあるから","水に浮くから","磁石にくっつくから","すぐに色が変わるから"], a:0, e:"合成モアッサナイトは熱の伝わり方がダイヤに近く、熱伝導式のテスターだけでは見分けられないことがあります。面が二重に見える（複屈折）のも手がかりです。", p:"22〜23", tip:"モアッサナイトも見分けられるテスターを使うか、鑑別書で確認を。"},
+ {q:"写真のピンクの石の指輪。ルビーとまちがえやすい、この石は？", img:"pink-sapphire", c:["ピンクサファイア","ルビー","クンツァイト","ロードクロサイト"], a:0, e:"ピンクサファイアは紫外線で赤く光るため、日差しの強い場所ではルビーのように見えることがあります。ルビーは赤の濃淡、ピンクサファイアは赤紫の濃淡で見ます。", p:33},
+ {q:"写真の、りんごのような緑の石は？ 翡翠とまちがえやすい石です。", img:"chrysoprase", c:["クリソプレーズ","ジェダイト","マラカイト","ペリドット"], a:0, e:"ニッケルで緑色になったカルセドニー、クリソプレーズ。翡翠とまちがえられやすい石です。", p:"66〜71"},
+ {q:"写真の緑の石は「インド翡翠」の名で売られることがあります。本当の名前は？", img:"aventurine", c:["グリーンアベンチュリン","ジェダイト","ネフライト","エメラルド"], a:0, e:"緑の中に細かいきらめきがあるグリーンアベンチュリン（石英の仲間）。翡翠ではありません。", p:"6〜7", b:"後編", tip:"「〇〇翡翠」という名前でも翡翠とは限りません。名前より中身を確認。"},
+ {q:"写真の青い石は、ラピスラズリに似ています。金色の粒がほとんどないこの石は？", img:"sodalite", c:["ソーダライト","ラピスラズリ","アズライト","サファイア"], a:0, e:"ソーダライトは濃い青に白いすじが入る石。ラピスラズリに見られる金色の粒（パイライト）がほとんどありません。", p:"35〜36", b:"後編"},
+ {q:"写真のネオンブルーの石は、パライバトルマリンに似ています。柔らかいこの石は？", img:"apatite", c:["アパタイト","パライバトルマリン","アクアマリン","ブルートパーズ"], a:0, e:"アパタイトはネオンブルーのものがあり、パライバトルマリンとまちがえやすい石です。硬度5と柔らかく、傷がつきやすいです。", p:"52〜55"},
+ {q:"写真の、黄金色と茶色のしま模様に光の帯が出る石は？", img:"tigers-eye", c:["タイガーアイ（虎目石）","ホークスアイ（鷹目石）","クリソベリルキャッツアイ","琥珀"], a:0, e:"タイガーアイ（虎目石）。同じ仲間で青いものはホークスアイ（鷹目石）と呼ばれます。", p:61},
+ {q:"写真の、茶色〜灰色の煙ったような水晶は？", img:"smoky-quartz", c:["スモーキークォーツ（煙水晶）","シトリン","ルチルクオーツ","アメジスト"], a:0, e:"煙ったような色の水晶、スモーキークォーツ（煙水晶）です。", p:61},
+ {q:"写真のような青〜青緑のトルマリンを何という？", img:"indicolite", c:["インディゴライト","ルベライト","パライバトルマリン","アクアマリン"], a:0, e:"青いトルマリンはインディゴライト。銅を含むネオンのような青緑はパライバトルマリンです。", p:"52〜55"},
+ {q:"写真のように、形が少しいびつな真珠が多く、川や湖の貝から採れる真珠は？", img:"freshwater-pearl", c:["淡水パール","アコヤ真珠","南洋真珠","タヒチ真珠"], a:0, e:"淡水パールは川や湖の貝から採れる真珠。アコヤ真珠より手ごろな価格で流通しています。", p:44, b:"後編"},
+ {q:"写真の櫛（くし）の素材で、ウミガメの甲羅から作られるものは？", img:"tortoiseshell", c:["べっ甲（トータスシェル）","琥珀","ジェット","マザーオブパール"], a:0, e:"べっ甲はタイマイというウミガメの甲羅。現在は国際取引が厳しく制限されています。", p:49, b:"後編", tip:"プラスチックの模造品も多いので注意。"}
+]}
+
+
+
+]}
 ]};
+
+/* ステージごとの写真（ホームの一覧に表示） */
+window.GEM_STAGE_PHOTO = {c1s1:"rock-crystal",c1s2:"emerald-crystal",c1s5:"ruby",c1s8:"cut-round",c1s9:"cut-emerald",c2s1:"diamond",c2s3:"cut-round",c3s1:"sapphire",c3s2:"yellow-sapphire",c3s4:"star-ruby",c3s5:"imperial-topaz",c3s6:"alexandrite",c3s7:"emerald",c3s8:"watermelon",c3s9:"garnet",c3s10:"amethyst-geode",c3s11:"citrine",c3s12:"agate",c4s1:"peridot",c4s2:"nephrite",c4s4:"kunzite",c4s5:"tanzanite",c4s6:"moonstone",c4s7:"zircon",c4s8:"hematite",c4s9:"sphene",c4s10:"opal",c4s11:"black-opal",c4s12:"boulder-opal",c4s13:"turquoise",c4s14:"lapis",c4s15:"larimar",c5s1:"coral",c5s2:"pearl",c5s3:"tahitian-pearl",c5s4:"conch-pearl",c5s5:"amber",c6s1:"silver",c6s2:"gold",c6s3:"platinum",cxs1:"spinel"};
 
 /* 用語集（アプリの「用語集」タブに表示） */
 window.GEM_GLOSSARY = [
@@ -959,6 +1119,1320 @@ window.GEM_GLOSSARY = [
 
 </script>
 <script>
+/* 写真データ（Wikimedia Commons。撮影者・ライセンスは「写真の出典」に表示） */
+window.GEM_PHOTOS = {
+"diamond": {
+"f": "photos/diamond.jpg",
+"n": "ダイヤモンド",
+"m": [
+"ダイヤモンド",
+"ラウンドブリリアントカット"
+],
+"by": "Petragems",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Round_Brilliant_Cut_Diamond.jpg",
+"w": 537,
+"h": 544
+},
+"ruby": {
+"f": "photos/ruby.jpg",
+"n": "ルビー",
+"m": [
+"ルビー",
+"圧倒的にルビーが高い"
+],
+"by": "Sasaki kijinuko",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Ruby_loose_stone.jpg",
+"w": 720,
+"h": 580
+},
+"sapphire": {
+"f": "photos/sapphire.jpg",
+"n": "ブルーサファイア",
+"m": [
+"サファイア",
+"ロイヤルブルー",
+"コランダム（鋼玉）",
+"コランダム"
+],
+"by": "Chip Clark, Smithsonian staff",
+"lic": "Public domain",
+"lu": "",
+"src": "https://commons.wikimedia.org/wiki/File:Logan_Sapphire_10956420_cropped.png",
+"w": 534,
+"h": 720
+},
+"yellow-sapphire": {
+"f": "photos/yellow-sapphire.jpg",
+"n": "イエローサファイア",
+"m": [
+"ファンシーカラーサファイア"
+],
+"by": "Lorraine Hughes",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Engagement_ring_18K_yellow_gold_with_yellow_sapphire_and_diamonds.jpg",
+"w": 720,
+"h": 720
+},
+"star-ruby": {
+"f": "photos/star-ruby.jpg",
+"n": "スタールビー",
+"m": [
+"スタールビー"
+],
+"by": "HandsomeMrToad",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:DeLong_Ruby.png",
+"w": 561,
+"h": 720
+},
+"star-sapphire": {
+"f": "photos/star-sapphire.jpg",
+"n": "スターサファイア",
+"m": [
+"スターサファイア"
+],
+"by": "James St. John",
+"lic": "CC0",
+"lu": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"src": "https://commons.wikimedia.org/wiki/File:Star_of_Bombay.jpg",
+"w": 480,
+"h": 720
+},
+"spinel": {
+"f": "photos/spinel.jpg",
+"n": "レッドスピネル（結晶）",
+"m": [
+"レッドスピネル"
+],
+"by": "Robert M. Lavinsky",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Spinel-tmu22c.jpg",
+"w": 680,
+"h": 720
+},
+"imperial-topaz": {
+"f": "photos/imperial-topaz.jpg",
+"n": "インペリアルトパーズ",
+"m": [
+"トパーズ",
+"シェリーカラー"
+],
+"by": "Icon Jewels",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:57.06_Carats_Emerald_cut_Imperial_Topaz.jpg",
+"w": 650,
+"h": 668
+},
+"blue-topaz": {
+"f": "photos/blue-topaz.jpg",
+"n": "ブルートパーズ",
+"m": [
+"ブルートパーズ"
+],
+"by": "Mauro Cateb",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Blue_topaz_-_a.JPG",
+"w": 720,
+"h": 573
+},
+"catseye": {
+"f": "photos/catseye.jpg",
+"n": "クリソベリルキャッツアイ",
+"m": [
+"クリソベリルキャッツアイ",
+"シャトヤンシー",
+"ハニーイエロー"
+],
+"by": "Gemshare at English Wikipedia",
+"lic": "CC BY-SA 3.0",
+"lu": "http://creativecommons.org/licenses/by-sa/3.0/",
+"src": "https://commons.wikimedia.org/wiki/File:Cymophane.jpg",
+"w": 720,
+"h": 534
+},
+"alexandrite": {
+"f": "photos/alexandrite.jpg",
+"n": "アレキサンドライト",
+"m": [
+"アレキサンドライト"
+],
+"by": "英語版Wikipediaの投稿者",
+"lic": "CC BY-SA 3.0",
+"lu": "http://creativecommons.org/licenses/by-sa/3.0/",
+"src": "https://commons.wikimedia.org/wiki/File:Alexandrite_26.75cts.jpg",
+"w": 720,
+"h": 339
+},
+"emerald": {
+"f": "photos/emerald.jpg",
+"n": "エメラルド",
+"m": [
+"エメラルド・翡翠"
+],
+"by": "Mauro Cateb",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:5_Emeralds_from_Colombia.JPG",
+"w": 720,
+"h": 659
+},
+"emerald-crystal": {
+"f": "photos/emerald-crystal.jpg",
+"n": "エメラルド（原石）",
+"m": [
+"ベリル（緑柱石）"
+],
+"by": "Robert M. Lavinsky",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Beryl-Quartz-Emerald-Zambia-33mm_0891.jpg",
+"w": 670,
+"h": 720
+},
+"aquamarine": {
+"f": "photos/aquamarine.jpg",
+"n": "アクアマリン",
+"m": [
+"アクアマリン"
+],
+"by": "Darla Sondrol",
+"lic": "CC0",
+"lu": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"src": "https://commons.wikimedia.org/wiki/File:Aquamarine_(GeoDIL_number_-_2732).jpg",
+"w": 683,
+"h": 583
+},
+"morganite": {
+"f": "photos/morganite.jpg",
+"n": "モルガナイト（原石）",
+"m": [
+"モルガナイト"
+],
+"by": "Eric Polk",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Beryl_var_morganite_NHMLA.png",
+"w": 720,
+"h": 344
+},
+"pink-tourmaline": {
+"f": "photos/pink-tourmaline.jpg",
+"n": "ルベライト（ピンクトルマリン）",
+"m": [
+"電気石"
+],
+"by": "Mauro Cateb",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Brazilian_pink_tormaline_-_Rubellite.jpg",
+"w": 576,
+"h": 554
+},
+"green-tourmaline": {
+"f": "photos/green-tourmaline.jpg",
+"n": "グリーントルマリン",
+"m": [
+"グリーントルマリン"
+],
+"by": "Mauro Cateb",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Brazilian_green_tourmaline.jpg",
+"w": 720,
+"h": 565
+},
+"watermelon": {
+"f": "photos/watermelon.jpg",
+"n": "ウォーターメロントルマリン",
+"m": [
+"ウォーターメロントルマリン"
+],
+"by": "Graeme Churchard",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Maine_Mineral_and_Gem_Museum,_Bethel_-_Elbaite_tourmaline_-_watermelon_tourmaline.jpg",
+"w": 480,
+"h": 720
+},
+"bicolor": {
+"f": "photos/bicolor.jpg",
+"n": "バイカラートルマリン",
+"m": [
+"バイカラートルマリン"
+],
+"by": "DonGuennie (G-Empire The World Of Gems)",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Bi-Color-Turmalin-G-EmpireTheWorldOfGems.jpg",
+"w": 650,
+"h": 450
+},
+"paraiba": {
+"f": "photos/paraiba.jpg",
+"n": "パライバトルマリン",
+"m": [
+"パライバトルマリン",
+"ネオンブルー"
+],
+"by": "GlobalGemology",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:-_paraiba_tourmaine.png",
+"w": 720,
+"h": 676
+},
+"garnet": {
+"f": "photos/garnet.jpg",
+"n": "ガーネット",
+"m": [
+"柘榴石（ざくろいし）",
+"パイロープとアルマンダイト"
+],
+"by": "Didier Descouens",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:AlmandinInde.jpg",
+"w": 720,
+"h": 465
+},
+"demantoid": {
+"f": "photos/demantoid.jpg",
+"n": "デマントイドガーネット",
+"m": [
+"デマントイドガーネット"
+],
+"by": "Dr Anatoly",
+"lic": "CC BY 4.0",
+"lu": "https://creativecommons.org/licenses/by/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Byssolite_%22ponytail%22_in_the_Ural_demantoid.jpg",
+"w": 720,
+"h": 720
+},
+"tsavorite": {
+"f": "photos/tsavorite.jpg",
+"n": "ツァボライト（結晶）",
+"m": [
+"ツァボライト（結晶）"
+],
+"by": "Robert M. Lavinsky",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Grossular-121703.jpg",
+"w": 566,
+"h": 600
+},
+"spessartine": {
+"f": "photos/spessartine.jpg",
+"n": "スペサタイトガーネット",
+"m": [
+"マンダリンガーネット"
+],
+"by": "James St. John",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Orange_spessartine_garnet_1.jpg",
+"w": 720,
+"h": 453
+},
+"iolite": {
+"f": "photos/iolite.jpg",
+"n": "アイオライト",
+"m": [
+"コーディエライト",
+"多色性",
+"ウォーターサファイア"
+],
+"by": "Didier Descouens",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Cordierite_pl%C3%A9ochro%C3%AFsme.jpg",
+"w": 720,
+"h": 290
+},
+"rock-crystal": {
+"f": "photos/rock-crystal.jpg",
+"n": "水晶（ロッククリスタル）",
+"m": [
+"ロッククリスタル",
+"石英（せきえい）"
+],
+"by": "Wilfredor",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Cuarzo_Cristal.jpg",
+"w": 720,
+"h": 566
+},
+"amethyst": {
+"f": "photos/amethyst.jpg",
+"n": "アメジスト",
+"m": [
+"紫水晶"
+],
+"by": "Memecry2",
+"lic": "CC BY 3.0",
+"lu": "https://creativecommons.org/licenses/by/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Amethyst_1_Cent.JPG",
+"w": 691,
+"h": 616
+},
+"amethyst-geode": {
+"f": "photos/amethyst-geode.jpg",
+"n": "アメジストの晶洞",
+"m": [
+"アメジストの晶洞"
+],
+"by": "Simeon87",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:2012_Tucson_Gem_%26_Mineral_Show_79.JPG",
+"w": 540,
+"h": 720
+},
+"citrine": {
+"f": "photos/citrine.jpg",
+"n": "シトリン",
+"m": [
+"シトリン（黄色のクオーツ）"
+],
+"by": "Mauro Cateb",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Faceted_citrine.jpg",
+"w": 720,
+"h": 540
+},
+"ametrine": {
+"f": "photos/ametrine.jpg",
+"n": "アメトリン（原石）",
+"m": [
+"アメトリン（原石）"
+],
+"by": "Ra'ike",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Ametrin_from_Bolivia.jpg",
+"w": 720,
+"h": 468
+},
+"rose-quartz": {
+"f": "photos/rose-quartz.jpg",
+"n": "ローズクォーツ",
+"m": [
+"ローズクォーツ"
+],
+"by": "Kaarel Tiidus",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Estonian_Museum_of_Natural_History_Specimen_No_201835_photo_(g27_g27-168_jpg).jpg",
+"w": 720,
+"h": 480
+},
+"rutilated": {
+"f": "photos/rutilated.jpg",
+"n": "ルチルクオーツ",
+"m": [
+"ルチルクオーツ"
+],
+"by": "Kluka",
+"lic": "CC BY-SA 3.0",
+"lu": "http://creativecommons.org/licenses/by-sa/3.0/",
+"src": "https://commons.wikimedia.org/wiki/File:Kwarc_z_rutylem,_Brazylia.JPG",
+"w": 650,
+"h": 487
+},
+"agate": {
+"f": "photos/agate.jpg",
+"n": "アゲート（瑪瑙）",
+"m": [
+"アゲート（瑪瑙）"
+],
+"by": "峠 武宏",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Banded_agate_from_Mexico_(cropped).jpg",
+"w": 720,
+"h": 703
+},
+"onyx": {
+"f": "photos/onyx.jpg",
+"n": "ブラックオニキス",
+"m": [
+"ブラックオニキス"
+],
+"by": "W.carter",
+"lic": "CC BY 4.0",
+"lu": "https://creativecommons.org/licenses/by/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Black_oval_onyx_cabochons_2.jpg",
+"w": 720,
+"h": 540
+},
+"carnelian": {
+"f": "photos/carnelian.jpg",
+"n": "カーネリアン",
+"m": [
+"紅玉髄"
+],
+"by": "Kelly Nash",
+"lic": "CC BY 3.0",
+"lu": "https://creativecommons.org/licenses/by/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Carnelian_from_New_Jersey.jpg",
+"w": 720,
+"h": 515
+},
+"chalcedony": {
+"f": "photos/chalcedony.jpg",
+"n": "カルセドニー",
+"m": [
+"玉髄（ぎょくずい）"
+],
+"by": "W.carter",
+"lic": "CC BY 4.0",
+"lu": "https://creativecommons.org/licenses/by/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Blue_high_oval_chalcedony_cabochon_1.jpg",
+"w": 720,
+"h": 720
+},
+"peridot": {
+"f": "photos/peridot.jpg",
+"n": "ペリドット",
+"m": [
+"ペリドット",
+"橄欖石（かんらんせき）",
+"夕べのエメラルド"
+],
+"by": "DonGuennie (G-Empire The World of Gems - Die Welt der Edelsteine)",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Peridot-China.jpg",
+"w": 650,
+"h": 450
+},
+"jadeite": {
+"f": "photos/jadeite.jpg",
+"n": "ジェダイト（原石）",
+"m": [
+"ジェダイト"
+],
+"by": "Dave Dyet",
+"lic": "Public domain",
+"lu": "",
+"src": "https://commons.wikimedia.org/wiki/File:Jadeite_Sodium_aluminum_silicate_Burma_3025.jpg",
+"w": 637,
+"h": 543
+},
+"nephrite": {
+"f": "photos/nephrite.jpg",
+"n": "ネフライト",
+"m": [
+"ネフライト"
+],
+"by": "Mai Seppel",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Estonian_Museum_of_Natural_History_Specimen_No_202368_photo_(g27_g27-731_1_jpg).jpg",
+"w": 720,
+"h": 493
+},
+"kunzite": {
+"f": "photos/kunzite.jpg",
+"n": "クンツァイト",
+"m": [
+"スポジュミン"
+],
+"by": "Stickpen",
+"lic": "Public domain",
+"lu": "",
+"src": "https://commons.wikimedia.org/wiki/File:Kunzite-marquiscut.jpg",
+"w": 720,
+"h": 575
+},
+"tanzanite": {
+"f": "photos/tanzanite.jpg",
+"n": "タンザナイト",
+"m": [
+"タンザナイト",
+"ゾイサイト（灰簾石）"
+],
+"by": "Wiener Edelstein Zentrum",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Tanzanite_marquise_(navette)_cut.jpg",
+"w": 720,
+"h": 566
+},
+"moonstone": {
+"f": "photos/moonstone.jpg",
+"n": "ムーンストーン",
+"m": [
+"月長石",
+"アデュラレッセンス"
+],
+"by": "Géry PARENT",
+"lic": "Public domain",
+"lu": "",
+"src": "https://commons.wikimedia.org/wiki/File:Feldspar_9.jpg",
+"w": 720,
+"h": 479
+},
+"labradorite": {
+"f": "photos/labradorite.jpg",
+"n": "ラブラドライト",
+"m": [
+"スペクトロライト"
+],
+"by": "Adam Ognisty",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:1.labradoryt.jpg",
+"w": 720,
+"h": 540
+},
+"sunstone": {
+"f": "photos/sunstone.jpg",
+"n": "サンストーン",
+"m": [
+"アンデシン（サンストーン）"
+],
+"by": "Ra'ike",
+"lic": "CC BY 3.0",
+"lu": "https://creativecommons.org/licenses/by/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Oligoclase-Sunstone_from_India2.jpg",
+"w": 720,
+"h": 596
+},
+"zircon": {
+"f": "photos/zircon.jpg",
+"n": "ジルコン（結晶）",
+"m": [
+"ジルコン（結晶）"
+],
+"by": "Robert M. Lavinsky",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Zircon-216651.jpg",
+"w": 700,
+"h": 677
+},
+"hematite": {
+"f": "photos/hematite.jpg",
+"n": "ヘマタイト",
+"m": [
+"アイアンローズ"
+],
+"by": "Mauro Cateb",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Hematite_pebbles.jpg",
+"w": 720,
+"h": 540
+},
+"obsidian": {
+"f": "photos/obsidian.jpg",
+"n": "オブシディアン（黒曜石）",
+"m": [
+"火山活動で生まれた天然ガラス"
+],
+"by": "Krassotkin",
+"lic": "CC0",
+"lu": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"src": "https://commons.wikimedia.org/wiki/File:13_years_of_Russian_Wikinews_in_Moscow_18.jpg",
+"w": 720,
+"h": 540
+},
+"sphene": {
+"f": "photos/sphene.jpg",
+"n": "スフェーン",
+"m": [
+"クロムスフェーン"
+],
+"by": "Eurico Zimbres Zimbres",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Titanite_cut.jpg",
+"w": 720,
+"h": 700
+},
+"opal": {
+"f": "photos/opal.jpg",
+"n": "オパール（遊色）",
+"m": [
+"遊色効果",
+"プレシャスオパール",
+"オパール"
+],
+"by": "James St. John",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Precious_opal_(Coober_Pedy_Opal_Field,_South_Australia).jpg",
+"w": 492,
+"h": 720
+},
+"black-opal": {
+"f": "photos/black-opal.jpg",
+"n": "ブラックオパール",
+"m": [
+"ブラックオパール"
+],
+"by": "James St. John",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Precious_opal_(Lightning_Ridge,_New_South_Wales,_Australia)_4_(29911429675).jpg",
+"w": 720,
+"h": 365
+},
+"boulder-opal": {
+"f": "photos/boulder-opal.jpg",
+"n": "ボルダーオパール",
+"m": [
+"ボルダーオパール（母岩付き）"
+],
+"by": "JJ Harrison",
+"lic": "CC BY-SA 2.5",
+"lu": "https://creativecommons.org/licenses/by-sa/2.5",
+"src": "https://commons.wikimedia.org/wiki/File:Opal_from_Yowah,_Queensland,_Australia_2.jpg",
+"w": 720,
+"h": 480
+},
+"fire-opal": {
+"f": "photos/fire-opal.jpg",
+"n": "ファイアオパール",
+"m": [
+"ファイアオパール"
+],
+"by": "Elke Wetzig ( Elya )",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Feueropal_mineralogisches_museum_bonn.jpg",
+"w": 720,
+"h": 425
+},
+"turquoise": {
+"f": "photos/turquoise.jpg",
+"n": "ターコイズ",
+"m": [
+"ターコイズ",
+"トルコ石"
+],
+"by": "Tiit Hunt",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Estonian_Museum_of_Natural_History_Specimen_No_178057_photo_(g229_g229-420_jpg).jpg",
+"w": 720,
+"h": 540
+},
+"lapis": {
+"f": "photos/lapis.jpg",
+"n": "ラピスラズリ",
+"m": [
+"ラピスラズリ",
+"瑠璃"
+],
+"by": "Sailko",
+"lic": "CC BY 3.0",
+"lu": "https://creativecommons.org/licenses/by/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Campione_di_lapislazzuli,_da_ovalle,_cile,_parigi_MNHN.jpg",
+"w": 720,
+"h": 414
+},
+"larimar": {
+"f": "photos/larimar.jpg",
+"n": "ラリマー",
+"m": [
+"ラリマー"
+],
+"by": "Parent Géry",
+"lic": "Public domain",
+"lu": "",
+"src": "https://commons.wikimedia.org/wiki/File:Larimar_2(R%C3%A9publique_Dominicaine).jpg",
+"w": 720,
+"h": 479
+},
+"malachite": {
+"f": "photos/malachite.jpg",
+"n": "マラカイト",
+"m": [
+"孔雀石"
+],
+"by": "Simon Eugster",
+"lic": "CC BY-SA 3.0",
+"lu": "http://creativecommons.org/licenses/by-sa/3.0/",
+"src": "https://commons.wikimedia.org/wiki/File:Malachit_getupft.jpg",
+"w": 720,
+"h": 541
+},
+"coral": {
+"f": "photos/coral.jpg",
+"n": "珊瑚（赤珊瑚）",
+"m": [
+"血赤（ちあか）",
+"八放珊瑚（はっぽうさんご）"
+],
+"by": "James St. John",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Corallium_rubrum_(precious_red_coral)_(reef_in_the_Mediterranean_Sea,_offshore_Italy)_12.jpg",
+"w": 345,
+"h": 720
+},
+"pearl": {
+"f": "photos/pearl.jpg",
+"n": "アコヤ真珠",
+"m": [
+"アコヤ真珠",
+"真珠"
+],
+"by": "MASAYUKI KATO",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Akoya_pearl.jpg",
+"w": 720,
+"h": 473
+},
+"tahitian-pearl": {
+"f": "photos/tahitian-pearl.jpg",
+"n": "タヒチ真珠（黒蝶真珠）",
+"m": [
+"クロチョウパール"
+],
+"by": "Cabmok",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Perle-tahiti-gauguinspearl.jpg",
+"w": 640,
+"h": 425
+},
+"conch-pearl": {
+"f": "photos/conch-pearl.jpg",
+"n": "コンクパール",
+"m": [
+"火焔模様（フレーム）"
+],
+"by": "GlobalGemology",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:-_conch_pearl.png",
+"w": 720,
+"h": 720
+},
+"mother-of-pearl": {
+"f": "photos/mother-of-pearl.jpg",
+"n": "マザーオブパール（真珠層）",
+"m": [
+"真珠層をもつ貝殻"
+],
+"by": "James St. John",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Pinctada_margaritifera_(black-lipped_pearl_oyster)_(Tuamotu_Islands,_French_Polynesia,_Pacific_Ocean).jpg",
+"w": 720,
+"h": 500
+},
+"amber": {
+"f": "photos/amber.jpg",
+"n": "琥珀（虫入り）",
+"m": [
+"虫や植物が閉じ込められたもの",
+"大昔の松の仲間の樹液の化石"
+],
+"by": "Amber Bugs",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Four-Winged_Insect_in_Burmese_Amber_Possible_Lacewing_or_Mayfly_from_the_Cretaceous.jpg",
+"w": 596,
+"h": 720
+},
+"jet": {
+"f": "photos/jet.jpg",
+"n": "ジェット",
+"m": [
+"ジェット（黒玉）"
+],
+"by": "Thmsfrst",
+"lic": "Public domain",
+"lu": "",
+"src": "https://commons.wikimedia.org/wiki/File:Gagat-Holzmaden.JPG",
+"w": 720,
+"h": 540
+},
+"silver": {
+"f": "photos/silver.jpg",
+"n": "シルバーの装身具",
+"m": [
+"シルバーの装身具"
+],
+"by": "作者不明",
+"lic": "Public domain",
+"lu": "",
+"src": "https://commons.wikimedia.org/wiki/File:Anklet_And_Pin_(India),_19th_century_(CH_18177569).jpg",
+"w": 720,
+"h": 592
+},
+"gold": {
+"f": "photos/gold.jpg",
+"n": "金の地金",
+"m": [
+"金の地金"
+],
+"by": "Szaaman",
+"lic": "Public domain",
+"lu": "",
+"src": "https://commons.wikimedia.org/wiki/File:Gold_Ingots_on_white_background.jpg",
+"w": 720,
+"h": 435
+},
+"platinum": {
+"f": "photos/platinum.jpg",
+"n": "プラチナのリング",
+"m": [
+"プラチナのリング"
+],
+"by": "Pittigrilli",
+"lic": "CC BY 4.0",
+"lu": "https://creativecommons.org/licenses/by/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Platinum_finger_ring_with_diamond.jpg",
+"w": 720,
+"h": 451
+},
+"cut-round": {
+"f": "photos/cut-round.jpg",
+"n": "ラウンドブリリアントカット",
+"m": [
+"ラウンドブリリアント"
+],
+"by": "Sandypandya",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:510361UP.jpg",
+"w": 720,
+"h": 720
+},
+"cut-pear": {
+"f": "photos/cut-pear.jpg",
+"n": "ペアシェイプ",
+"m": [
+"ペアシェイプ"
+],
+"by": "Mauro Cateb",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Brazilian_citrine.jpg",
+"w": 640,
+"h": 473
+},
+"cut-marquise": {
+"f": "photos/cut-marquise.jpg",
+"n": "マーキスカット",
+"m": [
+"マーキス"
+],
+"by": "Didier Descouens",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Diopside_faceted.jpg",
+"w": 720,
+"h": 471
+},
+"cut-cushion": {
+"f": "photos/cut-cushion.jpg",
+"n": "クッションシェイプ",
+"m": [
+"クッションシェイプ"
+],
+"by": "Rijksmuseum",
+"lic": "CC0",
+"lu": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"src": "https://commons.wikimedia.org/wiki/File:De_diamant_van_Banjarmasin_Diamant_van_Banjarmasin,_NG-C-2000-3.jpg",
+"w": 720,
+"h": 720
+},
+"cut-heart": {
+"f": "photos/cut-heart.jpg",
+"n": "ハートシェイプ",
+"m": [
+"ハートシェイプ"
+],
+"by": "Darla Sondrol",
+"lic": "CC0",
+"lu": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"src": "https://commons.wikimedia.org/wiki/File:Diamond_(GeoDIL_number_-_2712).jpg",
+"w": 720,
+"h": 720
+},
+"cut-trilliant": {
+"f": "photos/cut-trilliant.jpg",
+"n": "トリリアントカット",
+"m": [
+"トリリアント"
+],
+"by": "Humanfeather / michelle jo",
+"lic": "CC BY 3.0",
+"lu": "https://creativecommons.org/licenses/by/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:London_blue_topaz.JPG",
+"w": 720,
+"h": 712
+},
+"cut-emerald": {
+"f": "photos/cut-emerald.jpg",
+"n": "エメラルドカット",
+"m": [
+"エメラルドカット"
+],
+"by": "Mauro Cateb",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:2_blue_topaz_crystals.jpg",
+"w": 720,
+"h": 540
+},
+"cut-princess": {
+"f": "photos/cut-princess.jpg",
+"n": "プリンセスカット",
+"m": [
+"プリンセス"
+],
+"by": "James St. John",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Blue_topaz_1.jpg",
+"w": 720,
+"h": 382
+},
+"cut-cabochon": {
+"f": "photos/cut-cabochon.jpg",
+"n": "カボションカット",
+"m": [
+"カボションカット"
+],
+"by": "W.carter",
+"lic": "CC BY 4.0",
+"lu": "https://creativecommons.org/licenses/by/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Blue_high_oval_chalcedony_cabochon_2.jpg",
+"w": 720,
+"h": 720
+},
+"cut-oval": {
+"f": "photos/cut-oval.jpg",
+"n": "オーバルカット",
+"m": [
+"オーバルカット"
+],
+"by": "Didier Descouens",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:DanburiteTaill%C3%A9e.jpg",
+"w": 720,
+"h": 481
+},
+"pink-sapphire": {
+"f": "photos/pink-sapphire.jpg",
+"n": "ピンクサファイア",
+"m": [
+"ピンクサファイア"
+],
+"by": "Charles J. Sharp",
+"lic": "CC BY 2.5",
+"lu": "https://creativecommons.org/licenses/by/2.5",
+"src": "https://commons.wikimedia.org/wiki/File:Pink_sapphire_ring.jpg",
+"w": 506,
+"h": 579
+},
+"freshwater-pearl": {
+"f": "photos/freshwater-pearl.jpg",
+"n": "淡水パール",
+"m": [
+"淡水パール"
+],
+"by": "Mauro Cateb",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:Biwa_pearls.jpg",
+"w": 720,
+"h": 545
+},
+"tigers-eye": {
+"f": "photos/tigers-eye.jpg",
+"n": "タイガーアイ（虎目石）",
+"m": [
+"虎目石",
+"タイガーアイ"
+],
+"by": "Doronenko",
+"lic": "CC BY 3.0",
+"lu": "https://creativecommons.org/licenses/by/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:2010_-_tigers_eye.jpg",
+"w": 720,
+"h": 560
+},
+"smoky-quartz": {
+"f": "photos/smoky-quartz.jpg",
+"n": "スモーキークォーツ（煙水晶）",
+"m": [
+"煙水晶"
+],
+"by": "Robert M. Lavinsky",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Almandine-Quartz-210868.jpg",
+"w": 517,
+"h": 700
+},
+"chrysoprase": {
+"f": "photos/chrysoprase.jpg",
+"n": "クリソプレーズ",
+"m": [
+"クリソプレーズ",
+"ニッケル"
+],
+"by": "Stephanie Clifford",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Chrysoprase_-_Brazil_(2933074084).jpg",
+"w": 720,
+"h": 575
+},
+"aventurine": {
+"f": "photos/aventurine.jpg",
+"n": "グリーンアベンチュリン",
+"m": [
+"グリーンアベンチュリン"
+],
+"by": "Simon Eugster",
+"lic": "CC BY-SA 3.0",
+"lu": "http://creativecommons.org/licenses/by-sa/3.0/",
+"src": "https://commons.wikimedia.org/wiki/File:AventurinGeschliffen.jpg",
+"w": 720,
+"h": 540
+},
+"rhodochrosite": {
+"f": "photos/rhodochrosite.jpg",
+"n": "ロードクロサイト（インカローズ）",
+"m": [
+"ロードクロサイト（インカローズ）"
+],
+"by": "Enric",
+"lic": "CC BY-SA 4.0",
+"lu": "https://creativecommons.org/licenses/by-sa/4.0",
+"src": "https://commons.wikimedia.org/wiki/File:141_Museu_de_Ci%C3%A8ncies_Naturals_de_Barcelona,_rodocrosita.jpg",
+"w": 720,
+"h": 648
+},
+"indicolite": {
+"f": "photos/indicolite.jpg",
+"n": "インディゴライト",
+"m": [
+"インディゴライト"
+],
+"by": "Robert M. Lavinsky",
+"lic": "CC BY-SA 3.0",
+"lu": "https://creativecommons.org/licenses/by-sa/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Elbaite-k-149b.jpg",
+"w": 568,
+"h": 534
+},
+"moissanite": {
+"f": "photos/moissanite.jpg",
+"n": "合成モアッサナイト",
+"m": [
+"合成モアッサナイト"
+],
+"by": "James St. John",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Moissanite_(synthetic_silicon_carbide)_5.jpg",
+"w": 720,
+"h": 355
+},
+"cubic-zirconia": {
+"f": "photos/cubic-zirconia.jpg",
+"n": "キュービックジルコニア",
+"m": [
+"人造宝石"
+],
+"by": "James St. John",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Cubic_zirconia_(synthetic_zirconium_dioxide)_1.jpg",
+"w": 720,
+"h": 471
+},
+"apatite": {
+"f": "photos/apatite.jpg",
+"n": "アパタイト",
+"m": [
+"アパタイト"
+],
+"by": "Didier Descouens",
+"lic": "CC BY 3.0",
+"lu": "https://creativecommons.org/licenses/by/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:Apatite_taill%C3%A9e.jpg",
+"w": 720,
+"h": 526
+},
+"amazonite": {
+"f": "photos/amazonite.jpg",
+"n": "アマゾナイト（原石）",
+"m": [
+"アマゾナイト（原石）"
+],
+"by": "James St. John",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Amazonite_2_(31810070543).jpg",
+"w": 720,
+"h": 489
+},
+"sodalite": {
+"f": "photos/sodalite.jpg",
+"n": "ソーダライト",
+"m": [
+"ソーダライト"
+],
+"by": "Adam Ognisty",
+"lic": "CC BY 3.0",
+"lu": "https://creativecommons.org/licenses/by/3.0",
+"src": "https://commons.wikimedia.org/wiki/File:1Sodalit.jpeg",
+"w": 720,
+"h": 540
+},
+"tortoiseshell": {
+"f": "photos/tortoiseshell.jpg",
+"n": "べっ甲（トータスシェル）",
+"m": [
+"トータスシェル（べっ甲）"
+],
+"by": "メトロポリタン美術館",
+"lic": "CC0",
+"lu": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"src": "https://commons.wikimedia.org/wiki/File:Comb_MET_43.152.5.jpg",
+"w": 720,
+"h": 651
+},
+"cut-carre": {
+"f": "photos/cut-carre.jpg",
+"n": "正方形のステップカット",
+"m": [
+"カレ"
+],
+"by": "AmberLocket",
+"lic": "CC0",
+"lu": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"src": "https://commons.wikimedia.org/wiki/File:Asscher_cut_diamond_7.png",
+"w": 576,
+"h": 576
+},
+"cut-rose": {
+"f": "photos/cut-rose.jpg",
+"n": "ローズカット",
+"m": [
+"ローズカット"
+],
+"by": "Steve Jurvetson",
+"lic": "CC BY 2.0",
+"lu": "https://creativecommons.org/licenses/by/2.0",
+"src": "https://commons.wikimedia.org/wiki/File:Apollo_synthetic_diamond.jpg",
+"w": 720,
+"h": 631
+}
+};
+window.GEM_PHOTO_ALIAS = {"star": "star-ruby", "cat": "catseye", "colorchange": "alexandrite", "moon": "moonstone"};
+
+</script>
+<script>
+/* 宝石図鑑（アプリの「図鑑」タブに表示）
+   {k:写真のキー, n:名前, w:和名・別名, g:色のグループ, h:モース硬度, pt:見分けポイント, st:学べるステージ} */
+window.GEM_ZUKAN = [
+ {k:"diamond", n:"ダイヤモンド", w:"金剛石", g:"無色・白", h:"10", pt:"虹色のきらめきと強い輝き。無色の石はほかにも多いので、テスターや鑑別書で確認。", st:"c2s1"},
+ {k:"ruby", n:"ルビー", w:"紅玉（コランダム）", g:"赤・ピンク", h:"9", pt:"鮮やかな赤。最高級はピジョンブラッド（鳩の血）。スピネルやガーネットと間違えやすい。", st:"c3s4"},
+ {k:"star-ruby", n:"スタールビー", w:"星彩紅玉", g:"赤・ピンク", h:"9", pt:"カボションの表面に6本の光の筋が星形に出る（アステリズム）。", st:"c3s4"},
+ {k:"sapphire", n:"サファイア", w:"青玉（コランダム）", g:"青", h:"9", pt:"コランダムのうち青いもの。赤はルビー、それ以外の色はファンシーカラーサファイア。", st:"c3s1"},
+ {k:"star-sapphire", n:"スターサファイア", w:"星彩青玉", g:"青", h:"9", pt:"青いコランダムに星形の光が出たもの。", st:"c3s1"},
+ {k:"yellow-sapphire", n:"イエローサファイア", w:"ファンシーカラーサファイア", g:"黄・オレンジ", h:"9", pt:"青以外のサファイアの一つ。シトリンやトパーズと色が似る。", st:"c3s2"},
+ {k:"spinel", n:"レッドスピネル", w:"尖晶石", g:"赤・ピンク", h:"8", pt:"ルビーとよく間違えられてきた赤い石。結晶は八面体。", st:"c3s5"},
+ {k:"imperial-topaz", n:"インペリアルトパーズ", w:"黄玉", g:"黄・オレンジ", h:"8", pt:"シェリー酒のようなオレンジ〜ピンクがかった色が高評価。", st:"c3s5"},
+ {k:"blue-topaz", n:"ブルートパーズ", w:"黄玉", g:"青", h:"8", pt:"市場の約99％は無色のトパーズに放射線を当てて青くしたもの。アクアマリンより色が濃く鮮やか。", st:"c3s5"},
+ {k:"catseye", n:"クリソベリルキャッツアイ", w:"猫目石（金緑石）", g:"黄・オレンジ", h:"8.5", pt:"光の筋が1本出る（シャトヤンシー）。最高級の色はハニーイエロー。", st:"c3s6"},
+ {k:"alexandrite", n:"アレキサンドライト", w:"金緑石", g:"緑", h:"8.5", pt:"太陽光で緑系、白熱灯で赤紫系に色が変わる（カラーチェンジ）。", st:"c3s6"},
+ {k:"emerald", n:"エメラルド", w:"翠玉（ベリル）", g:"緑", h:"7.5〜8", pt:"深い緑。内包物が多く、多くはオイルや樹脂で処理されている。割れやすい。", st:"c3s7"},
+ {k:"aquamarine", n:"アクアマリン", w:"藍玉（ベリル）", g:"青", h:"7.5〜8", pt:"やさしい水色。エメラルドと同じベリルの仲間。", st:"c3s7"},
+ {k:"morganite", n:"モルガナイト", w:"ピンクのベリル", g:"赤・ピンク", h:"7.5〜8", pt:"淡いピンク。クンツァイトやローズクォーツと色が似る。", st:"c3s7"},
+ {k:"pink-tourmaline", n:"ルベライト", w:"電気石（トルマリン）", g:"赤・ピンク", h:"7〜7.5", pt:"赤〜ピンクのトルマリン。青はインディゴライト。", st:"c3s8"},
+ {k:"green-tourmaline", n:"グリーントルマリン", w:"電気石", g:"緑", h:"7〜7.5", pt:"緑のトルマリン。エメラルドより黄みや暗さがある。", st:"c3s8"},
+ {k:"watermelon", n:"ウォーターメロントルマリン", w:"電気石", g:"多色・光の効果", h:"7〜7.5", pt:"輪切りにすると中心がピンク、外側が緑のスイカ模様。", st:"c3s8"},
+ {k:"bicolor", n:"バイカラートルマリン", w:"電気石", g:"多色・光の効果", h:"7〜7.5", pt:"1つの結晶に2色以上が入る。", st:"c3s8"},
+ {k:"paraiba", n:"パライバトルマリン", w:"電気石", g:"青", h:"7〜7.5", pt:"銅を含み、ネオンのような青緑に光る。1989年にブラジルで発見。", st:"c3s8"},
+ {k:"garnet", n:"ガーネット", w:"柘榴石", g:"赤・ピンク", h:"6.5〜7.5", pt:"暗めの赤が多く、ルビーより黒み・茶色みがある。いくつかの鉱物のグループ名。", st:"c3s9"},
+ {k:"spessartine", n:"スペサタイトガーネット", w:"満礬柘榴石", g:"黄・オレンジ", h:"6.5〜7.5", pt:"鮮やかなオレンジ。明るいものはマンダリンガーネット。", st:"c3s9"},
+ {k:"demantoid", n:"デマントイドガーネット", w:"翠柘榴石", g:"緑", h:"6.5〜7", pt:"強い虹色のきらめき。馬の尾のような内包物（ホーステール）が目印。", st:"c3s9"},
+ {k:"tsavorite", n:"ツァボライト", w:"緑色のグロッシュラー", g:"緑", h:"7〜7.5", pt:"明るく、きらめきの強い緑のガーネット。", st:"c3s9"},
+ {k:"iolite", n:"アイオライト", w:"菫青石（コーディエライト）", g:"青", h:"7〜7.5", pt:"見る向きで青紫と灰色に見える（多色性）。別名ウォーターサファイア。", st:"c3s9"},
+ {k:"rock-crystal", n:"ロッククリスタル", w:"水晶", g:"無色・白", h:"7", pt:"無色透明の石英。六角柱の結晶になる。", st:"c3s10"},
+ {k:"amethyst", n:"アメジスト", w:"紫水晶", g:"紫", h:"7", pt:"紫色の水晶。2月の誕生石。加熱するとシトリンになる。", st:"c3s10"},
+ {k:"ametrine", n:"アメトリン", w:"紫黄水晶", g:"多色・光の効果", h:"7", pt:"紫と黄が1つの結晶に混ざる。主にボリビア産。", st:"c3s10"},
+ {k:"rose-quartz", n:"ローズクォーツ", w:"紅水晶", g:"赤・ピンク", h:"7", pt:"少し白く濁ったやわらかいピンク。", st:"c3s10"},
+ {k:"rutilated", n:"ルチルクオーツ", w:"針入り水晶", g:"無色・白", h:"7", pt:"金色の針状のルチルが入った水晶。", st:"c3s10"},
+ {k:"citrine", n:"シトリン", w:"黄水晶", g:"黄・オレンジ", h:"7", pt:"黄色の水晶。市場の多くはアメジストを加熱したもの。", st:"c3s11"},
+ {k:"chalcedony", n:"カルセドニー", w:"玉髄", g:"青", h:"6.5〜7", pt:"半透明でやわらかい色。細かい石英の集まり。模様がないものを呼ぶ。", st:"c3s12"},
+ {k:"agate", n:"アゲート", w:"瑪瑙", g:"多色・光の効果", h:"6.5〜7", pt:"しま模様のあるカルセドニー。染色されたものも多い。", st:"c3s12"},
+ {k:"onyx", n:"ブラックオニキス", w:"縞瑪瑙", g:"黒・グレー", h:"6.5〜7", pt:"均一な黒。多くはカルセドニーを黒く染めたもの。", st:"c3s12"},
+ {k:"carnelian", n:"カーネリアン", w:"紅玉髄", g:"黄・オレンジ", h:"6.5〜7", pt:"オレンジ〜赤の半透明のカルセドニー。", st:"c3s12"},
+ {k:"peridot", n:"ペリドット", w:"橄欖石", g:"緑", h:"6.5〜7", pt:"オリーブのような黄緑。ファセットが二重に見える（複屈折）。", st:"c4s1"},
+ {k:"jadeite", n:"ジェダイト", w:"翡翠（硬玉）", g:"緑", h:"6.5〜7", pt:"透明感のある緑が最高級（インペリアルジェード）。樹脂含浸や染色に注意。", st:"c4s2"},
+ {k:"nephrite", n:"ネフライト", w:"軟玉", g:"緑", h:"6〜6.5", pt:"翡翠と呼ばれるもう一つの石。ジェダイトより価値は低め。", st:"c4s2"},
+ {k:"kunzite", n:"クンツァイト", w:"スポジュミン（リシア輝石）", g:"紫", h:"6.5〜7", pt:"淡いピンク〜紫。日光で色があせやすく、割れやすい。", st:"c4s4"},
+ {k:"tanzanite", n:"タンザナイト", w:"灰簾石（ゾイサイト）", g:"紫", h:"6〜7", pt:"青と紫が混じる。タンザニアのメレラニだけで採れる。", st:"c4s5"},
+ {k:"moonstone", n:"ムーンストーン", w:"月長石", g:"無色・白", h:"6〜6.5", pt:"青白い光がふわっと浮かぶ（アデュラレッセンス）。", st:"c4s6"},
+ {k:"labradorite", n:"ラブラドライト", w:"曹灰長石", g:"多色・光の効果", h:"6〜6.5", pt:"暗い地に青・緑・金の光が出る（ラブラドレッセンス）。", st:"c4s6"},
+ {k:"sunstone", n:"サンストーン", w:"日長石", g:"黄・オレンジ", h:"6〜6.5", pt:"中に金属のようなきらめき（アベンチュレッセンス）。", st:"c4s6"},
+ {k:"zircon", n:"ジルコン", w:"風信子石", g:"無色・白", h:"6.5〜7.5", pt:"強いきらめき。ファセットが二重に見える（複屈折）。ダイヤの代用にされてきた。", st:"c4s7"},
+ {k:"hematite", n:"ヘマタイト", w:"赤鉄鉱", g:"黒・グレー", h:"5.5〜6.5", pt:"金属のような銀黒色の光沢。持つとずっしり重い。", st:"c4s8"},
+ {k:"obsidian", n:"オブシディアン", w:"黒曜石", g:"黒・グレー", h:"5〜5.5", pt:"天然ガラス。割れ口が貝殻のように鋭い。", st:"c4s8"},
+ {k:"sphene", n:"スフェーン", w:"楔石（チタン石）", g:"緑", h:"5〜5.5", pt:"ダイヤ以上の虹色のきらめき。柔らかく傷つきやすい。", st:"c4s9"},
+ {k:"opal", n:"オパール", w:"蛋白石", g:"多色・光の効果", h:"5.5〜6.5", pt:"見る角度で色が変わる（遊色効果）。水分を含み、乾燥に弱い。", st:"c4s10"},
+ {k:"black-opal", n:"ブラックオパール", w:"黒蛋白石", g:"多色・光の効果", h:"5.5〜6.5", pt:"地色が暗いほど遊色が映えて高価。ライトニングリッジ産が有名。", st:"c4s11"},
+ {k:"boulder-opal", n:"ボルダーオパール", w:"母岩付きオパール", g:"多色・光の効果", h:"5.5〜6.5", pt:"茶色い母岩ごと磨いたもの。張り合わせ（ダブレット）と区別する。", st:"c4s12"},
+ {k:"fire-opal", n:"ファイアオパール", w:"火蛋白石", g:"黄・オレンジ", h:"5.5〜6.5", pt:"オレンジ〜赤の透明な地色。遊色がないものも多い。", st:"c4s10"},
+ {k:"turquoise", n:"ターコイズ", w:"トルコ石", g:"青", h:"5〜6", pt:"空色に茶色の網目模様（メイトリックス）。ほとんどが樹脂で処理されている。", st:"c4s13"},
+ {k:"lapis", n:"ラピスラズリ", w:"瑠璃", g:"青", h:"5〜5.5", pt:"濃い青に金色の粒（パイライト）。酸に弱い。", st:"c4s14"},
+ {k:"larimar", n:"ラリマー", w:"ブルーペクトライト", g:"青", h:"4.5〜5", pt:"水色に白い波模様。ドミニカ共和国だけで採れる。日光で色があせやすい。", st:"c4s15"},
+ {k:"malachite", n:"マラカイト", w:"孔雀石", g:"緑", h:"3.5〜4", pt:"濃淡の緑の同心円のしま模様。柔らかく酸に弱い。", st:"c4s15"},
+ {k:"coral", n:"珊瑚（コーラル）", w:"さんご", g:"赤・ピンク", h:"3〜4", pt:"生き物が作る有機宝石。濃い赤は「血赤」。酸や汗に弱い。", st:"c5s1"},
+ {k:"pearl", n:"アコヤ真珠", w:"真珠（パール）", g:"無色・白", h:"2.5〜4.5", pt:"白〜ピンクがかった色と強い照り。酸や汗に弱い。", st:"c5s2"},
+ {k:"tahitian-pearl", n:"タヒチ真珠", w:"黒蝶真珠（クロチョウパール）", g:"黒・グレー", h:"2.5〜4.5", pt:"黒〜グレーで、緑がかった照りが人気。", st:"c5s3"},
+ {k:"conch-pearl", n:"コンクパール", w:"巻き貝の真珠", g:"赤・ピンク", h:"3.5前後", pt:"ピンクの地に炎のような模様（フレーム）。", st:"c5s4"},
+ {k:"mother-of-pearl", n:"マザーオブパール", w:"真珠層", g:"多色・光の効果", h:"3〜4", pt:"貝殻の内側の虹色に光る層。真珠と同じ物質。", st:"c5s4"},
+ {k:"amber", n:"琥珀（アンバー）", w:"こはく", g:"黄・オレンジ", h:"2〜2.5", pt:"樹液の化石。とても軽い。虫入りは人気だが樹脂の偽物もある。", st:"c5s5"},
+ {k:"jet", n:"ジェット", w:"黒玉", g:"黒・グレー", h:"2.5〜4", pt:"大昔の樹木の化石。とても軽い（ヘマタイトとの見分け）。", st:"c1s1"},
+ {k:"silver", n:"シルバー", w:"銀", g:"金属", h:"—", pt:"SV925＝銀92.5％。空気中の硫黄で黒く変色（硫化）する。", st:"c6s1"},
+ {k:"gold", n:"ゴールド", w:"金", g:"金属", h:"—", pt:"K18＝金75％。純金（K24）は柔らかすぎるのでジュエリーにはあまり使わない。", st:"c6s2"},
+ {k:"platinum", n:"プラチナ", w:"白金", g:"金属", h:"—", pt:"変色せず、ダイヤとの相性がよいので日本の結婚指輪に多い。ホワイトゴールドとは別物。", st:"c6s3"},
+ {k:"pink-sapphire", n:"ピンクサファイア", w:"桃色のコランダム", g:"赤・ピンク", h:"9", pt:"ルビーは赤の濃淡、ピンクサファイアは赤紫の濃淡で見る。紫外線で赤く光るのでルビーと間違えやすい。", st:"cxs1"},
+ {k:"indicolite", n:"インディゴライト", w:"青い電気石", g:"青", h:"7〜7.5", pt:"青〜青緑のトルマリン。パライバほどのネオンのような輝きはない。", st:"c3s8"},
+ {k:"smoky-quartz", n:"スモーキークォーツ", w:"煙水晶", g:"黒・グレー", h:"7", pt:"茶色〜灰色の煙ったような水晶。", st:"c3s10"},
+ {k:"tigers-eye", n:"タイガーアイ", w:"虎目石", g:"黄・オレンジ", h:"7", pt:"黄金色と茶色のしま模様に光の帯が動く。青いものはホークスアイ（鷹目石）。", st:"c3s10"},
+ {k:"chrysoprase", n:"クリソプレーズ", w:"緑玉髄", g:"緑", h:"6.5〜7", pt:"ニッケルによるりんごのような緑のカルセドニー。翡翠と間違えやすい。", st:"c3s12"},
+ {k:"freshwater-pearl", n:"淡水パール", w:"淡水真珠", g:"無色・白", h:"2.5〜4.5", pt:"川や湖の貝から採れる真珠。形がいびつなものが多く、アコヤより手ごろ。", st:"c5s3"},
+ {k:"tortoiseshell", n:"べっ甲", w:"トータスシェル", g:"黄・オレンジ", h:"2.5前後", pt:"ウミガメ（タイマイ）の甲羅。今は国際取引が厳しく制限されている。プラスチックの模造品も多い。", st:"c5s4"},
+ {k:"cubic-zirconia", n:"キュービックジルコニア", w:"CZ（人造宝石）", g:"無色・白", h:"8〜8.5", pt:"ダイヤの代用品の代表。虹色のきらめきが強く、ダイヤより重い。ダイヤテスターで見分ける。", st:"c1s3"},
+ {k:"moissanite", n:"合成モアッサナイト", w:"炭化ケイ素", g:"無色・白", h:"9.25", pt:"ダイヤによく似た代用品。熱伝導式のダイヤテスターでは「ダイヤ」と出ることがあるので要注意。面が二重に見える（複屈折）。"},
+ {k:"aventurine", n:"グリーンアベンチュリン", w:"砂金水晶", g:"緑", h:"6.5〜7", pt:"緑の中に細かいきらめき。「インド翡翠」の名で売られることがあるが翡翠ではない。"},
+ {k:"amazonite", n:"アマゾナイト", w:"天河石", g:"緑", h:"6〜6.5", pt:"青緑に白いすじ模様の長石。ターコイズや翡翠と間違えやすい。"},
+ {k:"sodalite", n:"ソーダライト", w:"方ソーダ石", g:"青", h:"5.5〜6", pt:"濃い青に白いすじ。ラピスラズリに似るが、金色の粒（パイライト）がほとんどない。"},
+ {k:"apatite", n:"アパタイト", w:"燐灰石", g:"青", h:"5", pt:"ネオンブルーでパライバトルマリンに似ることがある。柔らかく傷つきやすい。"},
+ {k:"rhodochrosite", n:"ロードクロサイト", w:"菱マンガン鉱（インカローズ）", g:"赤・ピンク", h:"3.5〜4", pt:"ピンクと白のしま模様。とても柔らかい。"},
+];
+
+</script>
+<script>
 (function(){
 const D = window.GEM_DATA;
 const MARK = ["A","B","C","D","E"];
@@ -968,12 +2442,17 @@ const esc = s => String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":
 /* ---------- 問題の下ごしらえ（IDと、選択肢の並びを固定シャッフル） ---------- */
 function hash(s){let h=2166136261;for(const ch of s){h^=ch.codePointAt(0);h=Math.imul(h,16777619)}return h>>>0}
 function rng(seed){return()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const P = window.GEM_PHOTOS || {};
+const PA = window.GEM_PHOTO_ALIAS || {};
 const ALL = [];
 const STAGES = [];
 D.chapters.forEach(ch => ch.stages.forEach((st, si) => {
   st.chapter = ch; st.no = ch.no + "-" + (si+1);
+  if (!st.ph && window.GEM_STAGE_PHOTO) st.ph = window.GEM_STAGE_PHOTO[st.id];
   st.qs.forEach((q, qi) => {
     q.id = st.id + "-" + (qi+1); q.stage = st;
+    if (q.img && PA[q.img] && P[PA[q.img]]) q.img = PA[q.img];
+    if (q.img && P[q.img]) q.q = q.q.replace(/^図の/, "写真の").replace(/^図のように/, "写真のように");
     // 数字の並び（年・％など）や2択は順番を保つ。それ以外は問題ごとに決まった並びに入れ替える
     const keep = q.c.length < 3 || q.c.every(c => /\d/.test(c));
     let order = q.c.map((_, i) => i);
@@ -1037,6 +2516,64 @@ const ART = {
   "karat": () => { const bar=(y,l,p,t)=>`<text x="10" y="${y+17}" font-size="14" font-weight="700" fill="currentColor">${l}</text><rect x="60" y="${y}" width="${2*p}" height="24" rx="4" fill="#d9a521"/><rect x="${60+2*p}" y="${y}" width="${200-2*p}" height="24" rx="4" fill="#c58a6a" fill-opacity="${p<100?1:0}"/><text x="${60+p}" y="${y+17}" text-anchor="middle" font-size="12" fill="#2a1d00">${t}</text>`; return `<svg viewBox="0 0 280 120" role="img">${bar(14,"K24",100,"金100％")}${bar(56,"K18",75,"金75％")}<text x="${60+175}" y="${56+17}" text-anchor="middle" font-size="11" fill="#2a1d00">割金25％</text><text x="140" y="112" text-anchor="middle" font-size="12" fill="currentColor">18金＝24分の18が金</text></svg>`; },
   "bicolor": () => { const id="g"+(++gid); return `<svg viewBox="0 0 200 200" role="img"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f27aa0"/><stop offset=".46" stop-color="#f6a3bd"/><stop offset=".54" stop-color="#8fd6a0"/><stop offset="1" stop-color="#2c8a4e"/></linearGradient></defs><polygon points="70,10 130,10 150,30 150,170 130,190 70,190 50,170 50,30" fill="url(#${id})" stroke="#555" stroke-opacity=".4" stroke-width="2"/><g stroke="#fff" stroke-opacity=".6" fill="none"><polygon points="76,24 124,24 138,38 138,162 124,176 76,176 62,162 62,38"/><polygon points="84,40 116,40 124,48 124,152 116,160 84,160 76,152 76,48"/></g></svg>`; }
 };
+/* ---------- カットの図（上から見た形＋横から見た形。全カット同じ色・太い輪郭で見比べやすく） ---------- */
+const INK = "#34424e";
+function cutDefs(id){return `<defs><radialGradient id="${id}" cx="38%" cy="32%" r="80%"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#e4edf4"/><stop offset="1" stop-color="#b8cad8"/></radialGradient></defs>`}
+const L2 = (a,b) => `<line x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}"/>`;
+function topBrilliant(P, C){
+  const id = "c"+(++gid); C = C || centroid(P); const n = P.length;
+  const T = []; for (let i = 0; i < n; i += 2) T.push([C[0]+(P[i][0]-C[0])*0.52, C[1]+(P[i][1]-C[1])*0.52]);
+  let l = ""; T.forEach((t,k) => { const i = k*2; [P[(i-1+n)%n], P[i], P[(i+1)%n]].forEach(p => l += L2(t,p)); });
+  return `${cutDefs(id)}<polygon points="${pts(P)}" fill="url(#${id})"/><g stroke="${INK}" stroke-opacity=".5" stroke-width="1.3" fill="none">${l}<polygon points="${pts(T)}" fill="#fff" fill-opacity=".6"/></g><polygon points="${pts(P)}" fill="none" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`;
+}
+function topStep(P, levels){
+  const id = "c"+(++gid); const C = centroid(P);
+  const L = levels.map(s => P.map(p => [C[0]+(p[0]-C[0])*s, C[1]+(p[1]-C[1])*s]));
+  let g = L.map((l,i) => `<polygon points="${pts(l)}" fill="${i===L.length-1?"#fff":"none"}" fill-opacity=".6"/>`).join("");
+  P.forEach((p,i) => g += L2(p, L[L.length-1][i]));
+  return `${cutDefs(id)}<polygon points="${pts(P)}" fill="url(#${id})"/><g stroke="${INK}" stroke-opacity=".5" stroke-width="1.3">${g}</g><polygon points="${pts(P)}" fill="none" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`;
+}
+const circ = (r,n,rx,ry) => sample(t => [100+(rx||r)*Math.cos(t-Math.PI/2), 100+(ry||r)*Math.sin(t-Math.PI/2)], n||16, 0, 2*Math.PI);
+const SIDE = {
+  brilliant: `<polygon points="22,20 78,20 100,36 0,36" /><polygon points="0,36 100,36 50,88"/><line x1="0" y1="36" x2="100" y2="36" stroke-width="2.4"/>`,
+  step: `<polygon points="14,22 86,22 100,36 0,36"/><polygon points="0,36 100,36 82,80 18,80"/><polyline points="7,29 93,29" fill="none"/><polyline points="9,58 91,58" fill="none"/>`,
+  princess: `<polygon points="16,26 84,26 100,34 0,34"/><polygon points="0,34 100,34 50,92"/><line x1="25" y1="34" x2="50" y2="92"/><line x1="75" y1="34" x2="50" y2="92"/>`,
+  cab: `<path d="M0 70 Q50 -6 100 70 Z"/>`,
+  rose: `<polygon points="0,72 14,44 32,26 50,18 68,26 86,44 100,72"/><polyline points="14,44 32,50 50,18 68,50 86,44" fill="none"/><line x1="32" y1="50" x2="68" y2="50"/><line x1="32" y1="26" x2="32" y2="50"/><line x1="68" y1="26" x2="68" y2="50"/>`,
+  cab2: `<path d="M0 50 Q50 0 100 50 Q50 100 0 50 Z"/><line x1="0" y1="50" x2="100" y2="50" stroke-dasharray="5 4"/>`,
+};
+function cutSVG(top, side){
+  const id = "c"+(++gid);
+  return `<svg viewBox="0 0 330 222" role="img" class="cutsvg"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c3d3df"/></linearGradient></defs>
+  <g>${top}</g><text x="100" y="218" text-anchor="middle" font-size="13" fill="currentColor">上から見た形</text>
+  <g transform="translate(220 62)" fill="url(#${id})" stroke="${INK}" stroke-width="2" stroke-linejoin="round">${SIDE[side]}</g><text x="270" y="178" text-anchor="middle" font-size="13" fill="currentColor">横から見た形</text></svg>`;
+}
+const pearP = sample(t=>[100+90*Math.sin(t)*Math.abs(Math.sin(t/2)),100-86*Math.cos(t)],16,0,2*Math.PI);
+const trillP = (() => { const V=[[100,18],[180,156],[20,156]], P=[]; for(let k=0;k<3;k++){const a=V[k],b=V[(k+1)%3],m=[(a[0]+b[0])/2,(a[1]+b[1])/2],d=[m[0]-100,m[1]-110],L=Math.hypot(d[0],d[1]),c=[m[0]+d[0]/L*14,m[1]+d[1]/L*14];for(let i=0;i<6;i++){const t=i/6;P.push([(1-t)*(1-t)*a[0]+2*(1-t)*t*c[0]+t*t*b[0],(1-t)*(1-t)*a[1]+2*(1-t)*t*c[1]+t*t*b[1]])}} return P; })();
+function princessTop(sq){
+  const id="c"+(++gid), o=[[24,24],[176,24],[176,176],[24,176]], t=[[64,64],[136,64],[136,136],[64,136]], m=[[100,24],[176,100],[100,176],[24,100]];
+  let l=""; o.forEach((p,i)=>l+=L2(p,t[i])); m.forEach((p,i)=>{[t[i],t[(i+1)%4]].forEach(q=>l+=L2(p,q))}); l+=L2([64,64],[136,136])+L2([136,64],[64,136]);
+  return `${cutDefs(id)}<polygon points="${pts(o)}" fill="url(#${id})"/><g stroke="${INK}" stroke-opacity=".5" stroke-width="1.3">${l}<polygon points="${pts(t)}" fill="#fff" fill-opacity=".5"/></g><polygon points="${pts(o)}" fill="none" stroke="${INK}" stroke-width="3"/>`;
+}
+const CUTS = {
+  "cut-round":    {n:"ラウンドブリリアント", t:"ブリリアント", top:() => topBrilliant(circ(80)) + `<circle cx="100" cy="100" r="80" fill="none" stroke="${INK}" stroke-width="3"/>`, s:"brilliant", d:"真上から見て真円。光を最も強く返す形で、婚約指輪の定番。", p:15},
+  "cut-oval":     {n:"オーバル", t:"ブリリアント", top:() => topBrilliant(circ(0,16,62,86)), s:"brilliant", d:"たまご形のブリリアントカット。指が長く見えると人気。"},
+  "cut-pear":     {n:"ペアシェイプ", t:"ブリリアント", top:() => topBrilliant(pearP,[100,122]), s:"brilliant", d:"涙・洋梨の形。細めと太めで価格が3〜4倍変わることも。", p:15},
+  "cut-marquise": {n:"マーキス", t:"ブリリアント", top:() => topBrilliant(sample(t=>[100+52*Math.sin(t)*Math.abs(Math.sin(t)),100-90*Math.cos(t)],16,0,2*Math.PI)), s:"brilliant", d:"両端がとがった舟の形。", p:15},
+  "cut-heart":    {n:"ハートシェイプ", t:"ブリリアント", top:() => topBrilliant(sample(t=>[100+5.1*16*Math.pow(Math.sin(t),3),92-5.1*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))],16,0,2*Math.PI),[100,104]), s:"brilliant", d:"ハートの形。アメリカ発祥。", p:16},
+  "cut-trilliant":{n:"トリリアント", t:"ブリリアント", top:() => topBrilliant(trillP,[100,110]), s:"brilliant", d:"三角形のブリリアントカット。三角の原石「マクル」を活かす。", p:16},
+  "cut-cushion":  {n:"クッションシェイプ", t:"ブリリアント", top:() => topBrilliant(sample(t=>{const c=Math.cos(t),s=Math.sin(t);return[100+80*Math.sign(c)*Math.pow(Math.abs(c),.6),100+80*Math.sign(s)*Math.pow(Math.abs(s),.6)]},16,-Math.PI/2,1.5*Math.PI)), s:"brilliant", d:"角の丸い四角形。別名ピローカット。18世紀の主流。", p:16},
+  "cut-princess": {n:"プリンセス", t:"ブリリアント（裏側）", top:() => princessTop(), s:"princess", d:"上から見ると正方形、裏側はブリリアント。角が欠けやすい。", p:17},
+  "cut-emerald":  {n:"エメラルドカット", t:"ステップ", top:() => topStep([[70,14],[130,14],[162,46],[162,154],[130,186],[70,186],[38,154],[38,46]],[.8,.62,.46]), s:"step", d:"長方形の四隅を落としたステップカット。階段状の面。", p:17},
+  "cut-baguette": {n:"バゲット", t:"ステップ", top:() => topStep([[56,12],[144,12],[144,188],[56,188]],[.8,.6]), s:"step", d:"四隅を落とさない長方形のステップカット。脇石に多い。", p:17},
+  "cut-carre":    {n:"カレ", t:"ステップ", top:() => topStep([[26,26],[174,26],[174,174],[26,174]],[.78,.56]), s:"step", d:"正方形のバゲット（ステップカット）。", p:17},
+  "cut-triangle": {n:"トライアングル", t:"ステップ", top:() => topStep([[100,22],[180,160],[20,160]],[.74,.5]), s:"step", d:"三角形のステップカット。ブリリアントならトリリアント。", p:17},
+  "cut-rose":     {n:"ローズカット", t:"その他", top:() => { const id="c"+(++gid), O=circ(80,12), I=circ(42,6); let l=""; I.forEach((p,i)=>{ l+=L2([100,100],p); l+=L2(p,O[2*i]); l+=L2(p,O[(2*i+1)%12]); l+=L2(p,O[(2*i+11)%12]); }); return `${cutDefs(id)}<circle cx="100" cy="100" r="80" fill="url(#${id})"/><g stroke="${INK}" stroke-opacity=".5" stroke-width="1.3" fill="none">${l}<polygon points="${pts(I)}"/></g><circle cx="100" cy="100" r="80" fill="none" stroke="${INK}" stroke-width="3"/>`; }, s:"rose", d:"裏が平らで、表が三角の面のドーム型。古いジュエリーに多い。"},
+  "cut-cabochon": {n:"カボション", t:"カボション", top:() => { const id="c"+(++gid); return `${cutDefs(id)}<ellipse cx="100" cy="100" rx="64" ry="84" fill="url(#${id})" stroke="${INK}" stroke-width="3"/><ellipse cx="80" cy="64" rx="20" ry="12" fill="#fff" fill-opacity=".85" transform="rotate(-30 80 64)"/>`; }, s:"cab", d:"面を付けずドーム型に丸く磨く。不透明な石・内包物のある石に多い。", p:18},
+  "cab-double":   {n:"ダブルカボション", t:"カボション", top:() => { const id="c"+(++gid); return `${cutDefs(id)}<ellipse cx="100" cy="100" rx="64" ry="84" fill="url(#${id})" stroke="${INK}" stroke-width="3"/><ellipse cx="80" cy="64" rx="20" ry="12" fill="#fff" fill-opacity=".85" transform="rotate(-30 80 64)"/>`; }, s:"cab2", d:"表も裏もドーム型のカボション。", p:18},
+};
+const cutFig = key => CUTS[key] ? cutSVG(CUTS[key].top(), CUTS[key].s) : "";
+
 function anat(part){
   const hi = "var(--accent)", base = "var(--sunk)", st = "currentColor";
   const fill = p => p === part ? hi : base;
@@ -1047,8 +2584,23 @@ function anat(part){
   const target = {crown:[180,55],pavilion:[160,110],girdle:[220,73],table:[130,40],culet:[124,162]}[part];
   return `<svg viewBox="0 0 260 180" role="img"><g stroke="${st}" stroke-width="1.6" stroke-linejoin="round"><polygon points="${crown}" fill="${part==="table"||part==="culet"?base:fill("crown")}"/><polygon points="${girdle}" fill="${fill("girdle")}"/><polygon points="${pav}" fill="${part==="table"||part==="culet"?base:fill("pavilion")}"/></g><g stroke="${st}" stroke-opacity=".45" stroke-width="1"><line x1="85" y1="40" x2="55" y2="70"/><line x1="155" y1="40" x2="185" y2="70"/><line x1="105" y1="40" x2="95" y2="70"/><line x1="135" y1="40" x2="145" y2="70"/><line x1="120" y1="166" x2="70" y2="77"/><line x1="120" y1="166" x2="170" y2="77"/><line x1="120" y1="166" x2="120" y2="77"/></g>${extra}<line x1="${target[0]}" y1="${target[1]}" x2="${lbl[0]-10}" y2="${lbl[1]-5}" stroke="${hi}" stroke-width="2"/><circle cx="${lbl[0]}" cy="${lbl[1]-6}" r="11" fill="${hi}"/><text x="${lbl[0]}" y="${lbl[1]-1}" text-anchor="middle" font-size="15" font-weight="700" fill="var(--surface)">?</text></svg>`;
 }
+const NAME2PH = {}; Object.keys(P).forEach(k => (P[k].m || [P[k].n]).forEach(n => { if (!NAME2PH[n]) NAME2PH[n] = k; }));
+const credit = p => `写真：${esc(p.by)}／${esc(p.lic)}（Wikimedia Commons）`;
+function photo(key){ const p = P[key]; return `<figure class="ph"><button class="zimg plain" data-zoom="${key}" aria-label="写真を拡大"><img src="${p.f}" alt="問題の写真" loading="lazy" decoding="async" width="${p.w||""}" height="${p.h||""}"></button><figcaption>${credit(p)}</figcaption></figure>`; }
+function answerPhoto(q){
+  const k = q.ep || NAME2PH[q.choices[q.ans]];
+  if (!k || !P[k] || k === q.img) return "";
+  const p = P[k];
+  return `<figure class="ph mini" data-zoom="${k}" style="cursor:zoom-in"><img src="${p.f}" alt="${esc(p.n)}の写真" loading="lazy" decoding="async"><figcaption><b>実物の写真：${esc(p.n)}</b>${credit(p)}</figcaption></figure>`;
+}
 function figure(key, small){
   if (!key) return "";
+  if (CUTS[key]) {
+    const svg = cutFig(key);
+    if (small) return `<div class="fig">${P[key]?`<img src="${P[key].f}" alt="" loading="lazy">`:""}${svg}</div>`;
+    return P[key] ? `<div class="duo">${photo(key)}<div class="fig">${svg}<small>図はイラストです</small></div></div>` : `<div class="fig">${svg}<small>図はイラストです</small></div>`;
+  }
+  if (P[key]) return small ? `<div class="fig"><img src="${P[key].f}" alt="" loading="lazy"></div>` : photo(key);
   const svg = key.startsWith("anat-") ? anat(key.slice(5)) : (ART[key] ? ART[key]() : "");
   return `<div class="fig">${svg}${small?"":'<small>図はイラストです</small>'}</div>`;
 }
@@ -1068,6 +2620,12 @@ function home(){
       <button class="btn sub" id="go-mix">ランダム10問</button></div>
     <button class="linkbtn reset" id="reset">記録をリセットする</button><div id="confirm"></div>
   </section>`;
+  h += `<details class="guide" ${S.answered?"":"open"}><summary>はじめての方へ（使い方）</summary><ol>
+    <li><b>ステージを順番に</b>：第1章のSTAGE 1-1から始めます。★の数が難しさ（★1＝やさしい、★3＝むずかしい）です。</li>
+    <li><b>「4択で挑戦」</b>で問題を解きます。8割以上正解でクリア。答えるたびに解説と、宝石なら実物の写真が出ます。</li>
+    <li><b>「一問一答」</b>は答えを思い浮かべてからめくる暗記用です。まちがえた問題は「苦手を復習」にたまります。</li>
+    <li><b>「図鑑」</b>で宝石とカットを写真で見比べられます。解説の中の<span class="tl">点線の言葉</span>はタップすると意味が出ます。<b>「用語集」</b>でも調べられます。</li>
+    <li>写真はタップすると大きくなります。最後の<b>「写真編」</b>は写真だけで宝石を当てる総復習です。</li></ol></details>`;
   const next = STAGES.find(st => !cleared(st));
   if (next) h += `<section class="next" aria-label="次のおすすめ"><div><small>${done?"次はここから":"まずはここから"}</small><b>STAGE ${next.no}　${esc(next.title)}</b><span>${lab(next.chapter)}「${esc(next.chapter.title)}」・${next.qs.length}問</span></div><button class="btn" data-quiz="${next.id}">はじめる</button></section>`;
   h += `<nav class="toc" aria-label="章へ移動">${D.chapters.map(c => `<a href="#ch-${c.id}" class="${c.stages.every(cleared)?"done":""}">${lab(c)}<span>${esc(c.short||c.title.replace(/（.*）/,""))}</span></a>`).join("")}</nav>`;
@@ -1080,7 +2638,8 @@ function home(){
     ch.stages.forEach(st => {
       const b = S.best[st.id];
       const badge = b===undefined ? `<span class="badge">未挑戦</span>` : perfect(st) ? `<span class="badge perfect">全問正解</span>` : cleared(st) ? `<span class="badge clear">クリア ${b}/${st.qs.length}</span>` : `<span class="badge">最高 ${b}/${st.qs.length}</span>`;
-      h += `<div class="stage ${cleared(st)?"done":""} ${st===next?"is-next":""}"><div class="st-no"><small>STAGE</small><b>${st.no}</b></div>
+      const sp = st.ph && P[st.ph];
+      h += `<div class="stage ${cleared(st)?"done":""} ${st===next?"is-next":""} ${sp?"has-ph":""}"><div class="st-no"><small>STAGE</small><b>${st.no}</b></div>${sp?`<img class="st-ph" src="${sp.f}" alt="" loading="lazy" decoding="async">`:""}
         <div class="st-body"><h3>${esc(st.title)}</h3><div class="st-meta">${stars(st.star)}<span>${st.qs.length}問・${st.pages}</span>${badge}</div></div>
         <div class="st-act"><button class="btn" data-quiz="${st.id}">4択で挑戦</button><button class="btn sub" data-card="${st.id}">一問一答</button></div></div>`;
     });
@@ -1115,8 +2674,17 @@ function header(run){
   <div class="bar"><i style="width:${run.i/run.qs.length*100}%"></i></div>`;
 }
 function bindQuit(){ document.getElementById("quit").onclick = home; }
+/* 解説の中の用語をタップで説明（用語集から） */
+const GL = window.GEM_GLOSSARY || [];
+const GLMAP = {}; GL.forEach((g, i) => { const base = g.t.replace(/（.*?）/g, ""); const inner = (g.t.match(/（(.*?)）/) || [])[1]; [base, inner].filter(Boolean).forEach(v => v.split(/[／・]/).forEach(w => { w = w.trim(); if (w.length >= 2 && !GLMAP[w]) GLMAP[w] = i; })); });
+const GLRE = Object.keys(GLMAP).length ? new RegExp(Object.keys(GLMAP).sort((a,b) => b.length - a.length).map(w => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"), "g") : null;
+function linkTerms(text){
+  const t = esc(text); if (!GLRE) return t; const used = new Set();
+  return t.replace(GLRE, m => { const i = GLMAP[m]; if (used.has(i) || used.size >= 3) return m; used.add(i); return `<button class="tl" data-gl="${i}">${m}</button>`; });
+}
+view.addEventListener("click", e => { const b = e.target.closest(".tl"); if (!b) return; const box = b.closest(".explain, .card"); const g = GL[b.dataset.gl]; let pop = box.querySelector(".gl-pop"); if (pop && pop.dataset.gl === b.dataset.gl) { pop.remove(); return; } if (!pop) { pop = document.createElement("div"); pop.className = "gl-pop"; b.closest("p").after(pop); } pop.dataset.gl = b.dataset.gl; pop.innerHTML = `<b>${esc(g.t)}</b>${esc(g.d)}`; });
 function explainHTML(q){
-  return `<p>${esc(q.e)}</p>${q.tip?`<div class="tip"><b>買取の現場メモ</b>${esc(q.tip)}</div>`:""}<div class="src">${src(q)}・${esc(q.stage.chapter.title)}</div>`;
+  return `<p>${linkTerms(q.e)}</p>${answerPhoto(q)}${q.tip?`<div class="tip"><b>買取の現場メモ</b>${esc(q.tip)}</div>`:""}<div class="src">${src(q)}・${esc(q.stage.chapter.title)}</div>`;
 }
 function quizStep(run){
   if (run.i >= run.qs.length) return result(run);
@@ -1220,14 +2788,68 @@ function glossary(){
   const inp = document.getElementById("gq"); inp.oninput = () => render(inp.value); render("");
   window.scrollTo(0, 0);
 }
-function setNav(which){ ["home","book","glos"].forEach(k => document.getElementById("nav-"+k).setAttribute("aria-pressed", which===k)); keyHandler = null; }
+/* ---------- 画面：図鑑 ---------- */
+const ZG = ["すべて","赤・ピンク","青","緑","黄・オレンジ","紫","無色・白","黒・グレー","多色・光の効果","金属"];
+let zState = {tab:"gem", g:"すべて", kw:""};
+function hardBar(h){ const v = parseFloat(String(h).replace(/[^\d.].*$/,"")); if (!v) return ""; return `<span class="hbar" aria-hidden="true"><i style="width:${v*10}%"></i></span>`; }
+function zukan(){
+  setNav("zukan");
+  const Z = window.GEM_ZUKAN || [];
+  view.innerHTML = `<section class="panel"><h2 style="font-size:20px">宝石図鑑</h2><p class="note" style="margin:0">写真と「見分けのポイント」で、宝石とカットを見比べられます。写真をタップすると大きく表示します。モース硬度は傷のつきにくさ（10がいちばん硬い）。</p>
+    <div class="seg" role="tablist"><button role="tab" data-tab="gem" aria-selected="${zState.tab==="gem"}">宝石（${Z.length}種）</button><button role="tab" data-tab="cut" aria-selected="${zState.tab==="cut"}">カット早見表（${Object.keys(CUTS).length}種）</button></div></section>
+    <div id="zbody"></div>`;
+  view.querySelectorAll("[data-tab]").forEach(b => b.onclick = () => { zState.tab = b.dataset.tab; zukan(); });
+  const body = document.getElementById("zbody");
+  if (zState.tab === "cut") {
+    const groups = [["ブリリアントカット（細かい三角の面で強くきらめく）", k => CUTS[k].t.startsWith("ブリリアント")], ["ステップカット（階段状の面で透明感のある輝き）", k => CUTS[k].t === "ステップ"], ["カボションカット（面がなくドーム型）", k => CUTS[k].t === "カボション"], ["そのほかのカット", k => CUTS[k].t === "その他"]];
+    body.innerHTML = groups.map(([h, f]) => `<h3 class="zh">${h}</h3><div class="zcuts">${Object.keys(CUTS).filter(f).map(k => { const c = CUTS[k], ph = P[k]; return `<div class="zcut"><div class="fig">${cutFig(k)}</div>${ph?`<button class="zimg" data-zoom="${k}"><img src="${ph.f}" alt="${esc(c.n)}の写真" loading="lazy" decoding="async"><span>実物の写真</span></button>`:""}<div class="zt"><b>${esc(c.n)}</b><p>${esc(c.d)}</p>${c.p?`<div class="src">テキスト p.${c.p}</div>`:""}</div></div>`; }).join("")}</div>`).join("");
+  } else {
+    body.innerHTML = `<input id="zq" class="glos-search" type="search" placeholder="名前・和名で探す（例：翡翠）" autocomplete="off" value="${esc(zState.kw)}">
+      <div class="chips">${ZG.map(g => `<button class="chip" data-g="${g}" aria-pressed="${zState.g===g}">${g}</button>`).join("")}</div><div id="zl" class="zlist"></div>`;
+    const render = () => {
+      const kw = zState.kw.trim().toLowerCase();
+      const hit = Z.filter(z => (zState.g === "すべて" || z.g === zState.g) && (!kw || (z.n+z.w+z.pt).toLowerCase().includes(kw)));
+      document.getElementById("zl").innerHTML = hit.length ? hit.map(z => { const ph = P[z.k], st = STAGES.find(x => x.id === z.st); return `<article class="zk">
+        ${ph?`<button class="zimg" data-zoom="${z.k}"><img src="${ph.f}" alt="${esc(z.n)}の写真" loading="lazy" decoding="async"></button>`:""}
+        <div class="zt"><b>${esc(z.n)}</b><span class="zw">${esc(z.w)}${z.st?"":"　<span class=\"badge\">テキスト外の参考</span>"}</span>
+        <div class="zh2">硬度 ${esc(z.h)} ${hardBar(z.h)}</div>
+        <p>${esc(z.pt)}</p>${st?`<button class="linkbtn zgo" data-quiz="${st.id}">STAGE ${st.no}「${esc(st.title)}」で学ぶ →</button>`:""}</div></article>`; }).join("") : `<p class="note">当てはまる宝石がありません。</p>`;
+      document.querySelectorAll("#zl [data-quiz]").forEach(b => b.onclick = () => startStage(b.dataset.quiz, "quiz"));
+    };
+    const inp = document.getElementById("zq"); inp.oninput = () => { zState.kw = inp.value; render(); };
+    body.querySelectorAll("[data-g]").forEach(b => b.onclick = () => { zState.g = b.dataset.g; body.querySelectorAll("[data-g]").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); });
+    render();
+  }
+  window.scrollTo(0, 0);
+}
+/* ---------- 写真の拡大表示 ---------- */
+function zoom(key){
+  const p = P[key]; if (!p) return;
+  const d = document.createElement("div"); d.className = "lightbox"; d.setAttribute("role","dialog"); d.setAttribute("aria-label","写真の拡大");
+  d.innerHTML = `<figure><img src="${p.f}" alt=""><figcaption>${credit(p)}</figcaption></figure><button class="btn sub" aria-label="閉じる">閉じる</button>`;
+  const close = () => { d.remove(); document.removeEventListener("keydown", esc_); };
+  const esc_ = e => { if (e.key === "Escape") close(); };
+  d.onclick = close; document.addEventListener("keydown", esc_);
+  document.body.appendChild(d); d.querySelector("button").focus();
+}
+view.addEventListener("click", e => { const z = e.target.closest("[data-zoom]"); if (z) { e.preventDefault(); zoom(z.dataset.zoom); } });
+function credits(){
+  setNav("cred");
+  const keys = Object.keys(P).sort((a,b) => P[a].n.localeCompare(P[b].n, "ja"));
+  view.innerHTML = `<section class="panel"><h2 style="font-size:20px">写真の出典</h2><p class="note" style="margin:6px 0 0">このアプリの写真は、自由に利用できるライセンスで公開されている Wikimedia Commons の写真です。表示のため縮小・トリミングしています。各写真の撮影者とライセンスは下のとおりです（全${keys.length}枚）。</p></section>
+  <div class="credits">${keys.map(k => { const p = P[k]; return `<div class="credit"><img src="${p.f}" alt="${esc(p.n)}" loading="lazy" decoding="async"><div><b>${esc(p.n)}</b>撮影・作成：${esc(p.by)}<br>ライセンス：${p.lu?`<a href="${esc(p.lu)}" target="_blank" rel="noopener">${esc(p.lic)}</a>`:esc(p.lic)}<br><a href="${esc(p.src)}" target="_blank" rel="noopener">元の写真を見る</a></div></div>`; }).join("")}</div>`;
+  window.scrollTo(0, 0);
+}
+function setNav(which){ ["home","zukan","book","glos","cred"].forEach(k => document.getElementById("nav-"+k).setAttribute("aria-pressed", which===k)); keyHandler = null; }
 function lab(ch){ return ch.label || `第${ch.no}章`; }
 function src(x){ const b = x.b || (x.stage && x.stage.chapter.book); return `テキスト${b?b+" ":""}p.${x.p}`; }
 document.getElementById("nav-home").onclick = home;
 document.getElementById("nav-book").onclick = () => book("all");
 document.getElementById("nav-glos").onclick = glossary;
-document.getElementById("foot").textContent = `収録：${ALL.length}問・${STAGES.length}ステージ（${D.source}）。記録はこの端末のブラウザに保存されます。図はイラストです。`;
-window.GQ = { book, home, figure };
+document.getElementById("nav-cred").onclick = credits;
+document.getElementById("nav-zukan").onclick = () => zukan();
+document.getElementById("foot").textContent = `収録：${ALL.length}問・${STAGES.length}ステージ（${D.source}）。記録はこの端末のブラウザに保存されます。写真は Wikimedia Commons（出典は「写真の出典」に掲載）、図はイラストです。`;
+window.GQ = { book, home, figure, svgFigure: k => cutFig(k) || (ART[k] ? ART[k]() : "") };
 home();
 })();
 </script>
